@@ -58,9 +58,11 @@
      <Compile Include="Assets\Script\Kinect\KinectWrapper\KinectSensor.cs" />
      <Compile Include="Assets\Script\Kinect\KinectWrapper\SkeletonWrapper.cs" />
      <Compile Include="Assets\Scripts\cursor.cs" />
+     <Compile Include="Assets\Scripts\menu.cs" />
      <Compile Include="Assets\Scripts\oven.cs" />
      <Compile Include="Assets\Scripts\phone.cs" />
      <Compile Include="Assets\Scripts\topping.cs" />
+     <Compile Include="Assets\direction.cs" />
      <None Include="Assets\Asset\Shaders\Normal-Diffuse.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.3/UnityEngine.UI.dll</HintPath>

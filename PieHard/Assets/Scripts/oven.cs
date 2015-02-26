@@ -11,6 +11,8 @@ public class oven : MonoBehaviour {
 	public ovenState cur_state;
 	public ovenState next_state;
 
+	public GameObject pizza;
+
 	private bool set = false;
 	private float usage;
 	private float delay = 4f;
@@ -34,6 +36,7 @@ public class oven : MonoBehaviour {
 	}
 
 	void cooking(){
+		pizza.gameObject.renderer.enabled = false;
 		sprite_oven.SetBool ("closed", true);
 		if (!set) {
 			usage = Time.time + delay;
@@ -46,10 +49,13 @@ public class oven : MonoBehaviour {
 	}
 
 	void done(){
-	
+		sprite_oven.SetBool ("closed", true);
+		pizza.gameObject.renderer.enabled = true;
+		print ("done");
 	}
 
 	void empty(){
+		pizza.gameObject.renderer.enabled = false;
 		sprite_oven.SetBool ("closed", false);
 		//nothing happens until pizza is put in
 	}

@@ -15,6 +15,9 @@ public class cursor : MonoBehaviour {
 	private bool pizzaSet = false;
 	private float pizzaUsage;
 
+	private bool ovenSet = false;
+	private float ovenUsage; 
+
 	public GameObject topping;
 	public GameObject pizza;
 	public GameObject oven;
@@ -101,8 +104,6 @@ public class cursor : MonoBehaviour {
 				next_state = State.empty;
 			}
 		}
-
-
 	}
 
 	//Topping follows hand. Release if you throw away topping or hover over pizza
@@ -134,5 +135,20 @@ public class cursor : MonoBehaviour {
 		print ("holding pizza");
 		pizza.gameObject.transform.position = gameObject.transform.position;
 		//let go over oven
+		float xDist_oven = Mathf.Abs (gameObject.transform.position.x - oven.transform.position.x);
+		float yDist_oven = Mathf.Abs (gameObject.transform.position.y - oven.transform.position.y);
+		if (xDist_oven < .15f && yDist_oven < .15) {
+			print ("on oven");
+			if(!ovenSet){
+				ovenUsage = Time.time + delay;
+				ovenSet = true;
+			}
+			if(Time.time > ovenUsage){
+				ovenSet = false;
+				next_state = State.empty;
+				oven ov = oven.GetComponent<oven>();
+				ov.next_state = ovenState.cooking;
+			}
+		}
 	}
 }
