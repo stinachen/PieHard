@@ -58,6 +58,7 @@
      <Compile Include="Assets\Script\Kinect\KinectWrapper\KinectSensor.cs" />
      <Compile Include="Assets\Script\Kinect\KinectWrapper\SkeletonWrapper.cs" />
      <Compile Include="Assets\Scripts\cursor.cs" />
+     <Compile Include="Assets\Scripts\oven.cs" />
      <Compile Include="Assets\Scripts\phone.cs" />
      <Compile Include="Assets\Scripts\topping.cs" />
      <None Include="Assets\Asset\Shaders\Normal-Diffuse.shader" />

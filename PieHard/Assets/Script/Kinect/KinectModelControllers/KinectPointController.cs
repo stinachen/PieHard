@@ -81,7 +81,7 @@ public class KinectPointController : MonoBehaviour {
 	public int player;
 	public BoneMask Mask = BoneMask.All;
 	
-	public float scale = 1.0f;
+	public float scale = 1.5f;
 	
 	// Use this for initialization
 	void Start () {
