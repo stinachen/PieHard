@@ -22,14 +22,15 @@ public class phone : MonoBehaviour {
 	
 	public PhoneState cur_state;
 	public PhoneState next_state;
-	
+
 	public GameObject orderBubble;
 	/* E A S Y  T O P P I N G S */
 	public GameObject pepperoni;
 	public GameObject pepper;
 	public GameObject bacon;
 	public GameObject sausage;
-	
+
+
 	/* S P R I T E S */
 	public Sprite silentPhone;
 	public Sprite ringingPhone;
@@ -46,12 +47,13 @@ public class phone : MonoBehaviour {
 			phoneRenderer.sprite = silentPhone;
 		*/
 		
+
 		/* P H O N E  S T A T E */  
 		cur_state = PhoneState.silent;
 		next_state = PhoneState.silent;
 		start_time = Time.time;
 		orderBubble.renderer.enabled = false;
-		
+
 		/* T O P P I N G S */
 		pepperoni.renderer.enabled = false;
 		pepper.renderer.enabled = false;
@@ -62,27 +64,25 @@ public class phone : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		switch (cur_state) {
-		case PhoneState.ringing:
-			//changeSprite();
-			ringing();
-			break;
-		case PhoneState.silent:
-			//changeSprite();
-			silent();
-			break;
-		case PhoneState.busy:
-			sprite_phone.SetBool("ringing", false);
-			//changeSprite();
-			takeOrders();
-			break;
-			
+			case PhoneState.ringing:
+				//changeSprite();
+				ringing();
+				break;
+			case PhoneState.silent:
+				//changeSprite();
+				silent();
+				break;
+			case PhoneState.busy:
+				sprite_phone.SetBool("ringing", false);
+				//changeSprite();
+				takeOrders();
+				break;
 		}
 		
 		cur_state = next_state;
 	}
 	
 	void ringing(){
-
 		delay = Random.Range(20, 45);	
 		sprite_phone.SetBool("ringing", true);
 		bacon.renderer.enabled = false;
@@ -96,7 +96,6 @@ public class phone : MonoBehaviour {
 			next_state = PhoneState.ringing;
 		}
 	}
-	
 	/* P H O N E  O R D E R S */
 	// RANDOMLY GENERATES NUMBER OF TOPPINGS ON PIZZA
 	// EACH TOPPING IS ALSO RANDOMLY GENERATED
@@ -104,7 +103,6 @@ public class phone : MonoBehaviour {
 		orderBubble.renderer.enabled = true;
 		//for testing purposes
 		bacon.renderer.enabled = true;
-		
 		//to implement later when we has more toppingz
 		/*int numItems = Random.Range(1,4);
 		int chosenTopping = 0;
@@ -131,11 +129,12 @@ public class phone : MonoBehaviour {
 		orderBubble.renderer.enabled = false;
 		*/
 	}
-	
 	void changeSprite() {
 		if (phoneRenderer.sprite == silentPhone)
 			phoneRenderer.sprite = ringingPhone;
 		else
 			phoneRenderer.sprite = silentPhone;
 	}
+
 }
+
