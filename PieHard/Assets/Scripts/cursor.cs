@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Kinect;
+using System.Collections.Generic;
 
 public enum State{
 	empty, hold_topping, hold_pizza, phone
@@ -21,11 +22,16 @@ public class cursor : MonoBehaviour {
 	private bool ovenSet = false;
 	private float ovenUsage;
 
-	public GameObject topping;
+	//public GameObject topping;
+
 	public GameObject pizza;
 	public GameObject oven;
 	public GameObject phone;
-	//public GameObject[] toppings; //doesn't work as of now
+	public GameObject[] toppings; //doesn't work as of now
+
+	private List<bool> sets;
+	private List<float> usages;
+
 
 	public State cur_state = State.empty;
 	public State next_state; 
@@ -33,9 +39,17 @@ public class cursor : MonoBehaviour {
 	public GameObject cur_topping;
 
 
+
+
 	// Use this for initialization
 	void Start () {
-		//toppings = GameObject.FindGameObjectsWithTag ("topping");
+		sets = new List<bool> ();
+		usages = new List<float> ();
+		toppings = GameObject.FindGameObjectsWithTag ("topping");
+		for (int i = 0; i < toppings.Length; i++) {
+			sets.Add(false);
+			usages.Add(0f);
+		}
 	}
 	
 	// Update is called once per frame
@@ -58,7 +72,8 @@ public class cursor : MonoBehaviour {
 
 	//nothing in hand. Hover over topping or pizza to change state.
 	void empty(){
-		//foreach (GameObject topping in toppings) {
+		int i = 0;
+		foreach (GameObject topping in toppings) {
 			topping top = topping.GetComponent<topping> ();
 			if (!top.onPizza) {
 				float xDist_top = Mathf.Abs (gameObject.transform.position.x - topping.transform.position.x);
@@ -67,13 +82,13 @@ public class cursor : MonoBehaviour {
 				if (xDist_top < .15f && yDist_top < .15f) {
 					print ("on topping");
 					//hover over topping to grab
-					if (!set) {
+					if (!sets[i]) {
 						print ("set time for " + topping.name);
-						usage = Time.time + delay;
-						set = true;
+						usages[i] = Time.time + delay;
+						sets[i] = true;
 					}
 					if (Time.time > usage) { //successfully grabbed topping
-						set = false;
+						sets[i] = false;
 						cur_topping = topping;
 						next_state = State.hold_topping;
 						print ("grabbed it");
@@ -81,10 +96,11 @@ public class cursor : MonoBehaviour {
 					}
 				} else { //you exited topping before grabbing
 					print ("exited topping");
-					set = false;
+					sets[i] = false;
 					next_state = State.empty;
 				}
-		//	}
+			}
+			i++;
 		}
 		//pizza
 		float xDist_pizza = Mathf.Abs (gameObject.transform.position.x - pizza.transform.position.x);
