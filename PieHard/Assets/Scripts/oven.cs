@@ -18,22 +18,27 @@ public class oven : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		cur_state = ovenState.empty;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		switch (cur_state) {
 		case ovenState.cooking:
+			cooking();
 			break;
 		case ovenState.done:
+			done ();
 			break;
 		case ovenState.empty:
+			empty();
 			break;
 		}
 		cur_state = next_state;
 	}
 
 	void cooking(){
+		print ("cooking");
 		sprite_oven.SetBool ("closed", true);
 		if (!set) {
 			usage = Time.time + delay;
@@ -43,12 +48,11 @@ public class oven : MonoBehaviour {
 			set = false;
 			next_state = ovenState.done;
 		}
-		pizza.renderer.enabled = false;
 	}
 
 	void done(){
-		sprite_oven.SetBool ("close", false);
-		pizza.renderer.enabled = true;
+		sprite_oven.SetBool ("closed", false);
+		//pizza.SetActive (true);
 		//has pizza inside, changes state by cursor
 	}
 

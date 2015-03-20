@@ -63,6 +63,7 @@ public class cursor : MonoBehaviour {
 				hold_topping();
 				break;
 			case(State.hold_pizza):
+				hold_pizza();
 				break;
 			case(State.phone):
 				break;
@@ -189,7 +190,7 @@ public class cursor : MonoBehaviour {
 				ovenUsage = Time.time + delay;
 				ovenSet = true;
 			}
-			if(Time.time > usage){
+			if(Time.time > ovenUsage){
 				ovenSet = false;
 				oven cook = oven.GetComponent<oven>();
 				cook.next_state = ovenState.cooking;
