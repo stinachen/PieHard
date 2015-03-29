@@ -37,7 +37,11 @@ public class phone : MonoBehaviour {
 	private SpriteRenderer phoneRenderer;
 	
 	public Animator sprite_phone;
-	
+
+	private bool timerSet = false;
+	private float timerDelay = 4f;
+	private float timerUsage;
+
 	// Use this for initialization
 	void Start () {
 		/* I N I T I A L  S P R I T E */
@@ -83,7 +87,7 @@ public class phone : MonoBehaviour {
 	}
 	
 	void ringing(){
-		delay = Random.Range(20, 45);	
+		delay = Random.Range(8, 10);	
 		sprite_phone.SetBool("ringing", true);
 		bacon.renderer.enabled = false;
 	}
@@ -100,9 +104,22 @@ public class phone : MonoBehaviour {
 	// RANDOMLY GENERATES NUMBER OF TOPPINGS ON PIZZA
 	// EACH TOPPING IS ALSO RANDOMLY GENERATED
 	void takeOrders() {
-		orderBubble.renderer.enabled = true;
-		//for testing purposes
-		bacon.renderer.enabled = true;
+		if (!timerSet) {
+			timerSet = true;
+			timerUsage = Time.time + timerDelay;
+			orderBubble.renderer.enabled = true;
+			//for testing purposes
+			bacon.renderer.enabled = true;
+		}
+		if (Time.time > timerUsage) {
+			timerSet = false;
+			orderBubble.renderer.enabled = false;
+			bacon.renderer.enabled = false;
+			next_state = PhoneState.silent;
+			start_time = Time.time;
+		}
+
+
 		//to implement later when we has more toppingz
 		/*int numItems = Random.Range(1,4);
 		int chosenTopping = 0;
