@@ -11,14 +11,19 @@ public class oven : MonoBehaviour {
 	public ovenState cur_state;
 	public ovenState next_state;
 	public GameObject pizza;
+	public GameObject[] toppings;
 
 	private bool set = false;
 	private float usage;
 	private float delay = 4f;
 
+	public GameObject pizzaSpawner;
+	private Vector3 pizzaSpawn;
+
 	// Use this for initialization
 	void Start () {
 		cur_state = ovenState.empty;
+		pizzaSpawn = pizzaSpawner.gameObject.transform.position;
 	}
 	
 	// Update is called once per frame
@@ -43,6 +48,13 @@ public class oven : MonoBehaviour {
 		if (!set) {
 			usage = Time.time + delay;
 			set = true;
+			//put a blank pizza, reset toppings
+			//pizza.gameObject.transform.position = pizzaSpawn;
+			print("number of pizza children " + pizza.transform.childCount);
+			foreach(var r in toppings){
+				//r.renderer.enabled = false;
+			}
+			pizza.gameObject.renderer.enabled = true;
 		}
 		if (Time.time > usage) {
 			set = false;

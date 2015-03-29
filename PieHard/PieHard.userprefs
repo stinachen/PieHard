@@ -1,12 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\oven.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\phone.cs">
     <Files>
-      <File FileName="Assets\Scripts\phone.cs" Line="58" Column="1" />
+      <File FileName="Assets\Scripts\oven.cs" Line="51" Column="3" />
+      <File FileName="Assets\Scripts\phone.cs" Line="156" Column="20" />
       <File FileName="Assets\Scripts\topping.cs" Line="17" Column="18" />
-      <File FileName="Assets\Scripts\cursor.cs" Line="168" Column="49" />
+      <File FileName="Assets\Scripts\cursor.cs" Line="145" Column="39" />
       <File FileName="Assets\Script\Kinect\KinectModelControllers\KinectPointController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\oven.cs" Line="60" Column="11" />
       <File FileName="Assets\Scripts\directions.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
