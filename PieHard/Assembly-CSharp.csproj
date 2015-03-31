@@ -57,6 +57,7 @@
      <Compile Include="Assets\Script\Kinect\KinectWrapper\KinectRecorder.cs" />
      <Compile Include="Assets\Script\Kinect\KinectWrapper\KinectSensor.cs" />
      <Compile Include="Assets\Script\Kinect\KinectWrapper\SkeletonWrapper.cs" />
+     <Compile Include="Assets\Scripts\Scoring.cs" />
      <Compile Include="Assets\Scripts\cursor.cs" />
      <Compile Include="Assets\Scripts\directions.cs" />
      <Compile Include="Assets\Scripts\oven.cs" />

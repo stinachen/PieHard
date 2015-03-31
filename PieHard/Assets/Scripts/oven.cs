@@ -52,7 +52,7 @@ public class oven : MonoBehaviour {
 			//pizza.gameObject.transform.position = pizzaSpawn;
 			print("number of pizza children " + pizza.transform.childCount);
 			foreach(var r in toppings){
-				//r.renderer.enabled = false;
+				//r.renderer.enabled = false;s
 			}
 			pizza.gameObject.renderer.enabled = true;
 		}
