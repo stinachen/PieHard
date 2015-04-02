@@ -5,6 +5,7 @@ public class topping : MonoBehaviour {
 
 	public bool onPizza = false;
 	public bool inHand = false;
+	public bool inOven = false;
 
 	public GameObject pizzaTopping;
 	public Vector3 toppingSpawn;
@@ -12,7 +13,7 @@ public class topping : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		pizzaTopping.renderer.enabled = false;
-		toppingSpawn = pizzaTopping.transform.position;
+		toppingSpawn = transform.position;
 	}
 	
 	// Update is called once per frame
@@ -21,9 +22,22 @@ public class topping : MonoBehaviour {
 			pizzaTopping.renderer.enabled = true;
 			renderer.enabled = false;
 		}
-		if (inHand) {
+		if (inHand || inOven) {
 			pizzaTopping.renderer.enabled = false;
 			renderer.enabled = true;
+			if(inOven){
+				transform.position = toppingSpawn;
+				inHand = false;
+				inOven = false;
+			}
 		}
+	}
+
+	public void resetPosition(){
+		transform.position = toppingSpawn;
+		pizzaTopping.renderer.enabled = false;
+		renderer.enabled = true;
+		onPizza = false;
+		inHand = false;
 	}
 }

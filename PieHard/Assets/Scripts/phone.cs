@@ -51,6 +51,8 @@ public class phone : MonoBehaviour {
 	private float timerUsage;
 
 	private int numToppings;
+
+	private Scoring scoreSystem;
 	
 	// Use this for initialization
 	void Start () {
@@ -61,6 +63,7 @@ public class phone : MonoBehaviour {
 			phoneRenderer.sprite = silentPhone;
 		*/
 		
+		scoreSystem = GameObject.FindGameObjectWithTag ("scoring").GetComponent<Scoring>();
 
 		/* P H O N E  S T A T E */  
 		cur_state = PhoneState.silent;
@@ -213,6 +216,7 @@ public class phone : MonoBehaviour {
 	}
 
 	Sprite spritePicker(int num){
+		scoreSystem.wantedToppings[num] = true;
 		switch (num) {
 			case 0:
 				return pepperoniSprite;

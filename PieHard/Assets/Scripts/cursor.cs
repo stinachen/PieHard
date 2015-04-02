@@ -13,6 +13,13 @@ public class cursor : MonoBehaviour {
 	private float usage;
 	private float delay = 2f;
 
+	private bool toppingSet = false;
+	private float toppingUsage;
+	private float toppingDelay = 2f;
+
+	private bool toppingResetSet = false;
+	private float toppingResetUsage;
+
 	private bool pizzaSet = false;
 	private float pizzaUsage;
 
@@ -22,12 +29,16 @@ public class cursor : MonoBehaviour {
 	private bool ovenSet = false;
 	private float ovenUsage;
 
+	private bool trashSet = false;
+	private float trashUsage;
+
 	//public GameObject topping;
 
 	public GameObject pizza;
 	public GameObject oven;
 	public GameObject phone;
-	public GameObject[] toppings; //doesn't work as of now
+	public GameObject[] toppings; 
+	public GameObject trash;
 
 	private List<bool> sets;
 	private List<float> usages;
@@ -37,10 +48,9 @@ public class cursor : MonoBehaviour {
 	public State next_state; 
 
 	public GameObject cur_topping;
+	public int cur_topping_int;
 
-
-
-
+	private Vector3 pizzaSpawn;
 	// Use this for initialization
 	void Start () {
 		sets = new List<bool> ();
@@ -50,6 +60,8 @@ public class cursor : MonoBehaviour {
 			sets.Add(false);
 			usages.Add(0f);
 		}
+		trash = GameObject.FindGameObjectWithTag ("trash");
+		pizzaSpawn = pizza.transform.position;
 	}
 	
 	// Update is called once per frame
@@ -91,6 +103,7 @@ public class cursor : MonoBehaviour {
 					if (Time.time > usage) { //successfully grabbed topping
 						sets[i] = false;
 						cur_topping = topping;
+						cur_topping_int = i;
 						next_state = State.hold_topping;
 						print ("grabbed it");
 						return;
@@ -162,7 +175,7 @@ public class cursor : MonoBehaviour {
 		if (xDist_pizza < .15f && yDist_pizza < .15f) {
 			print ("on pizza");
 			if (!set) {
-				usage = Time.time + delay;
+				usage = Time.time + 1f;
 				set = true;
 			}
 			if (Time.time > usage) { //time has lapsed so drop topping on pizza
@@ -176,6 +189,28 @@ public class cursor : MonoBehaviour {
 			set = false;
 			next_state = State.hold_topping;
 		}
+
+		topping topHeld = cur_topping.GetComponent<topping>();
+		float xDist_spawn = Mathf.Abs (gameObject.transform.position.x - topHeld.toppingSpawn.x);
+		float yDist_spawn = Mathf.Abs (gameObject.transform.position.x - topHeld.toppingSpawn.y);
+		if (xDist_spawn < .15f && yDist_pizza < .15f) {
+			print ("put back");
+			if(!toppingResetSet){
+				toppingResetUsage = Time.time + delay;
+				toppingResetSet = true;
+			}
+			if(Time.time > toppingResetUsage){
+				toppingResetSet = false;
+				next_state = State.empty;
+				topping top = cur_topping.GetComponent<topping>();
+				top.inHand = false;
+				top.transform.position = top.toppingSpawn;
+				sets[cur_topping_int] = false;
+				for(int i = 0; i < toppings.Length; i++){
+					sets[i] = false;	
+				}
+			}
+		}
 	}
 
 	void hold_pizza(){
@@ -185,7 +220,7 @@ public class cursor : MonoBehaviour {
 		float xDist_oven = Mathf.Abs (gameObject.transform.position.x - oven.transform.position.x);
 		float yDist_oven = Mathf.Abs (gameObject.transform.position.y - oven.transform.position.y);
 		if (xDist_oven < .15f && yDist_oven < .15f) {
-			print ("on oven");
+			print ("in oven");
 			if(!ovenSet){
 				ovenUsage = Time.time + delay;
 				ovenSet = true;
@@ -195,6 +230,33 @@ public class cursor : MonoBehaviour {
 				oven cook = oven.GetComponent<oven>();
 				cook.next_state = ovenState.cooking;
 				next_state = State.empty;
+				foreach(var top in toppings){
+					topping onTop = top.GetComponent<topping>();
+					if(onTop.onPizza){
+						onTop.inOven = true;
+						onTop.onPizza = false;
+					}
+				}
+			}
+		}
+
+		//go in trash
+		float xDist_trash = Mathf.Abs (gameObject.transform.position.x - trash.transform.position.x);
+		float yDist_trash = Mathf.Abs (gameObject.transform.position.y - trash.transform.position.y);
+		if (xDist_trash < .15f && yDist_trash < .15f) {
+			print ("throw away");
+			if(!trashSet){
+				trashUsage = Time.time + delay;
+				trashSet = true;
+			}
+			if(Time.time > trashUsage){
+				foreach(var top in toppings){
+					var topHand = top.GetComponent<topping>();
+					topHand.resetPosition();
+				}
+				next_state = State.empty;
+				trashSet = false;
+				pizza.transform.position = pizzaSpawn;
 			}
 		}
 	}
