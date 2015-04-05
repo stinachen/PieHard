@@ -36,9 +36,12 @@ public class Scoring : MonoBehaviour {
 			if(toppingObjs[i].GetComponent<topping>().onPizza != wantedToppings[i]){
 				perfect = false;
 				curScore--;
+				print ("bad pizza");
+				break;
 			}
 		}
 		if (perfect) {
+			print ("perfect pizza");
 			pizzasLeft--;
 			curScore += 3;
 		}
