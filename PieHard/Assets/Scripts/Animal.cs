@@ -4,20 +4,40 @@ using System.Collections;
 public class Animal : MonoBehaviour {
 
 	private Vector3 spawnPoint;
-	public Vector3 bottomPoint;
+	private Vector3 bottomPoint;
+	public GameObject bottomArea;
 
 	private float speed;
+	private float lerpTime = 1f;
+	private float curLerpTime;
+
+	private ScoringDelivery scoreSystem;
 
 	// Use this for initialization
 	void Start () {
+		scoreSystem = GameObject.FindGameObjectWithTag ("scoring").GetComponent<ScoringDelivery>();
 		spawnPoint = gameObject.transform.position;
-		speed = 3f;
-		bottomPoint = gameObject.transform.position;
-		bottomPoint.y = -.38f;
+		speed = .1f;
+		curLerpTime = 0;
+		bottomPoint = bottomArea.transform.position;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		Vector3.Lerp (spawnPoint, bottomPoint, Time.deltaTime * speed);
+		curLerpTime += Time.deltaTime * speed;
+		if (curLerpTime > lerpTime) {
+			curLerpTime = lerpTime;
+			Destroy (gameObject);
+		}
+
+		float perc = curLerpTime / lerpTime;
+		transform.position = Vector3.Lerp (spawnPoint, bottomPoint, perc);
+	}
+
+	void OnTriggerEnter(Collider col){
+		if (col.gameObject.tag == "Player") {
+			print ("hit!");
+			scoreSystem.UpdatePizzas();
+		}
 	}
 }

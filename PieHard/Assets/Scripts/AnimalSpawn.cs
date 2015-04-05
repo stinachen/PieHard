@@ -8,11 +8,12 @@ public class AnimalSpawn : MonoBehaviour {
 	private float delay; 
 
 	public GameObject animal;
+	public GameObject bottom;
 
 	// Use this for initialization
 	void Start () {
 		set = false;
-		delay = 3f;
+		delay = Random.Range (5, 7);
 	}
 	
 	// Update is called once per frame
@@ -22,6 +23,8 @@ public class AnimalSpawn : MonoBehaviour {
 			set = true;
 			//instantiate animal
 			Instantiate(animal);
+			animal.transform.position = transform.position;
+			animal.GetComponent<Animal>().bottomArea = bottom;
 			animal.transform.position = transform.position;
 		}
 		if (Time.time > usage) {
