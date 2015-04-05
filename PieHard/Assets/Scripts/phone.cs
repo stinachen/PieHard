@@ -4,6 +4,9 @@ using System.Collections;
 public enum PhoneState{
 	ringing, silent, busy
 }
+
+
+
 /* TOPPINGS FOR ORDERS */
 /* Easy: 0-3
    Medium: 0-7
@@ -219,15 +222,19 @@ public class phone : MonoBehaviour {
 		scoreSystem.wantedToppings[num] = true;
 		switch (num) {
 			case 0:
+			scoreSystem.wantedToppings[0] = true;
 				return pepperoniSprite;
 				break;
 			case 1:
+			scoreSystem.wantedToppings[1] = true;
 				return pepperSprite;
 				break;
 			case 2:
+			scoreSystem.wantedToppings[2] = true;
 				return baconSprite;
 				break;
 			case 3:
+			scoreSystem.wantedToppings[3] = true;
 				return sausageSprite;
 				break;
 		default:

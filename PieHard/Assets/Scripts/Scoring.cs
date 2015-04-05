@@ -16,7 +16,6 @@ public class Scoring : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		toppingObjs = GameObject.FindGameObjectsWithTag ("topping");
 		for(int i = 0; i < toppingObjs.Length; i++){
 			wantedToppings.Add (false);
 		}
@@ -28,14 +27,19 @@ public class Scoring : MonoBehaviour {
 	void Update () {
 		score.text = "Score: " + curScore;
 		pizzas.text = "Pizzas Left: " + pizzasLeft;
+		if (pizzasLeft == 0) {
+			Application.LoadLevel(3);
+		}
 	}
 
 	public void scoreUpdate(){
 		bool perfect = true;
+		print ("topping length " + toppingObjs.Length);
 		for(int i = 0; i < toppingObjs.Length; i++){
+			print ("wanted toppings" + wantedToppings[i] + " onPizza " + toppingObjs[i].GetComponent<topping>().onPizza);
 			if(toppingObjs[i].GetComponent<topping>().onPizza != wantedToppings[i]){
 				perfect = false;
-				curScore--;
+				curScore-= 100;
 				print ("bad pizza");
 				break;
 			}
@@ -43,9 +47,7 @@ public class Scoring : MonoBehaviour {
 		if (perfect) {
 			print ("perfect pizza");
 			pizzasLeft--;
-			curScore += 3;
+			curScore += 300;
 		}
-
-
 	}
 }

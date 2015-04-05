@@ -51,6 +51,8 @@ public class cursor : MonoBehaviour {
 	public int cur_topping_int;
 
 	private Vector3 pizzaSpawn;
+
+	public Scoring scoreSystem;
 	// Use this for initialization
 	void Start () {
 		sets = new List<bool> ();
@@ -93,10 +95,10 @@ public class cursor : MonoBehaviour {
 				float yDist_top = Mathf.Abs (gameObject.transform.position.y - topping.transform.position.y);
 				//float dist = Vector3.Distance(gameObject.transform.position, topping.transform.position);
 				if (xDist_top < .15f && yDist_top < .15f) {
-					print ("on topping");
+					//print ("on topping");
 					//hover over topping to grab
 					if (!sets[i]) {
-						print ("set time for " + topping.name);
+						//print ("set time for " + topping.name);
 						usages[i] = Time.time + delay;
 						sets[i] = true;
 					}
@@ -105,11 +107,11 @@ public class cursor : MonoBehaviour {
 						cur_topping = topping;
 						cur_topping_int = i;
 						next_state = State.hold_topping;
-						print ("grabbed it");
+						//print ("grabbed it");
 						return;
 					}
 				} else { //you exited topping before grabbing
-					print ("exited topping");
+					//print ("exited topping");
 					sets[i] = false;
 					next_state = State.empty;
 				}
@@ -121,21 +123,21 @@ public class cursor : MonoBehaviour {
 		float yDist_pizza = Mathf.Abs (gameObject.transform.position.y - pizza.transform.position.y);	//float pizzaDist = Vector3.Distance (gameObject.transform.position, pizza.transform.position);
 		//print ("pizza distance " + pizzaDist);
 		if (xDist_pizza < .15f && yDist_pizza < .15f) {
-			print ("on pizza");
+			//print ("on pizza");
 			if(!pizzaSet){
-				print ("set time for pizza");
+				//print ("set time for pizza");
 				pizzaUsage = Time.time + delay;
 				pizzaSet = true;
 			}
 			if(Time.time > pizzaUsage){
 				pizzaSet = false;
 				next_state = State.hold_pizza;
-				print ("grabbed pizza");
+				//print ("grabbed pizza");
 				return;
 			}
 		}
 		else{
-			print ("exited pizza");
+			//print ("exited pizza");
 			pizzaSet = false;
 			next_state = State.empty;
 		}
@@ -144,14 +146,14 @@ public class cursor : MonoBehaviour {
 		float xDist_phone = Mathf.Abs (gameObject.transform.position.x - phone.transform.position.x);
 		float yDist_phone = Mathf.Abs (gameObject.transform.position.y - phone.transform.position.y);
 		if (xDist_phone < .15f && yDist_phone < .15f) {
-			print ("on phone");
+			//print ("on phone");
 			if(!phoneSet){
-				print ("set time for phone");
+			//	print ("set time for phone");
 				phoneUsage = Time.time + delay;
 				phoneSet = true;
 			}
 			if(Time.time > phoneUsage){
-				print ("phone answered");
+			//	print ("phone answered");
 				phoneSet = false;
 				next_state = State.empty;
 				phone talk = phone.GetComponent<phone>();
@@ -173,7 +175,7 @@ public class cursor : MonoBehaviour {
 		float xDist_pizza = Mathf.Abs (gameObject.transform.position.x - pizza.transform.position.x);
 		float yDist_pizza = Mathf.Abs (gameObject.transform.position.y - pizza.transform.position.y);
 		if (xDist_pizza < .15f && yDist_pizza < .15f) {
-			print ("on pizza");
+		//	print ("on pizza");
 			if (!set) {
 				usage = Time.time + 1f;
 				set = true;
@@ -194,7 +196,7 @@ public class cursor : MonoBehaviour {
 		float xDist_spawn = Mathf.Abs (gameObject.transform.position.x - topHeld.toppingSpawn.x);
 		float yDist_spawn = Mathf.Abs (gameObject.transform.position.x - topHeld.toppingSpawn.y);
 		if (xDist_spawn < .15f && yDist_pizza < .15f) {
-			print ("put back");
+			//print ("put back");
 			if(!toppingResetSet){
 				toppingResetUsage = Time.time + delay;
 				toppingResetSet = true;
@@ -214,13 +216,13 @@ public class cursor : MonoBehaviour {
 	}
 
 	void hold_pizza(){
-		print ("holding pizza");
+		//print ("holding pizza");
 		pizza.gameObject.transform.position = gameObject.transform.position;
 		//let go over oven
 		float xDist_oven = Mathf.Abs (gameObject.transform.position.x - oven.transform.position.x);
 		float yDist_oven = Mathf.Abs (gameObject.transform.position.y - oven.transform.position.y);
 		if (xDist_oven < .15f && yDist_oven < .15f) {
-			print ("in oven");
+		//	print ("in oven");
 			if(!ovenSet){
 				ovenUsage = Time.time + delay;
 				ovenSet = true;
@@ -230,12 +232,17 @@ public class cursor : MonoBehaviour {
 				oven cook = oven.GetComponent<oven>();
 				cook.next_state = ovenState.cooking;
 				next_state = State.empty;
+				scoreSystem.scoreUpdate();
 				foreach(var top in toppings){
 					topping onTop = top.GetComponent<topping>();
 					if(onTop.onPizza){
 						onTop.inOven = true;
 						onTop.onPizza = false;
+						onTop.resetPosition();
 					}
+				}
+				for(int i = 0; i < scoreSystem.wantedToppings.Count; i++){
+					scoreSystem.wantedToppings[i] = false;
 				}
 			}
 		}
@@ -244,7 +251,7 @@ public class cursor : MonoBehaviour {
 		float xDist_trash = Mathf.Abs (gameObject.transform.position.x - trash.transform.position.x);
 		float yDist_trash = Mathf.Abs (gameObject.transform.position.y - trash.transform.position.y);
 		if (xDist_trash < .15f && yDist_trash < .15f) {
-			print ("throw away");
+			//print ("throw away");
 			if(!trashSet){
 				trashUsage = Time.time + delay;
 				trashSet = true;

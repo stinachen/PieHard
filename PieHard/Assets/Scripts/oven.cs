@@ -46,19 +46,17 @@ public class oven : MonoBehaviour {
 	}
 
 	void cooking(){
-		print ("cooking");
+		//print ("cooking");
 		sprite_oven.SetBool ("closed", true);
 		if (!set) {
 			usage = Time.time + delay;
 			set = true;
 			//put a blank pizza, reset toppings
 			pizza.gameObject.transform.position = pizzaSpawn;
-			print("number of pizza children " + pizza.transform.childCount);
+			//print("number of pizza children " + pizza.transform.childCount);
 			pizza.gameObject.renderer.enabled = true;
-			scoreSystem.scoreUpdate();
-			for(int i = 0; i < scoreSystem.wantedToppings.Count; i++){
-				scoreSystem.wantedToppings[i] = false;
-			}
+			//scoreSystem.scoreUpdate();
+
 		}
 		if (Time.time > usage) {
 			set = false;
