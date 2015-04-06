@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\DifficultySelection.cs" />
      <Compile Include="Assets\Script\Kinect\KinectImgControllers\DisplayColor.cs" />
      <Compile Include="Assets\Script\Kinect\KinectImgControllers\DisplayDepth.cs" />
      <Compile Include="Assets\Script\Kinect\KinectModelControllers\KinectModelControllerV2.cs" />
@@ -61,6 +62,7 @@
      <Compile Include="Assets\Scripts\AnimalSpawn.cs" />
      <Compile Include="Assets\Scripts\BikeCollider.cs" />
      <Compile Include="Assets\Scripts\BikeControl.cs" />
+     <Compile Include="Assets\Scripts\DifficultySelect.cs" />
      <Compile Include="Assets\Scripts\DontDestroy.cs" />
      <Compile Include="Assets\Scripts\GameOverScreen.cs" />
      <Compile Include="Assets\Scripts\House.cs" />

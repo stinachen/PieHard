@@ -1,11 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 public class DontDestroy : MonoBehaviour {
 
 	public int deliveredPizzas;
 	public int lostPizzas = 0;
 	public int pizzas = 6;
+
+	/* D I F F I C U L T Y  L E V E L S */
+	// EASY: 0
+	// MEDIUM: 1
+	// HARD: 2
+	public int difficulty = 0;
 
 	private static DontDestroy instance;
 
