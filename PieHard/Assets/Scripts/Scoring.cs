@@ -45,7 +45,7 @@ public class Scoring : MonoBehaviour {
 			}
 		}
 		if (perfect) {
-			print ("perfect pizza");
+			//print ("perfect pizza");
 			pizzasLeft--;
 			curScore += 300;
 		}

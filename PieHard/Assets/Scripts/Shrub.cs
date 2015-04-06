@@ -1,22 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Animal : MonoBehaviour {
+public class Shrub : MonoBehaviour {
+
 
 	private Vector3 spawnPoint;
 	private Vector3 bottomPoint;
 	public GameObject bottomArea;
-	public bool onScreen;
-
+	
 	private float speed;
 	private float lerpTime = 1f;
 	private float curLerpTime;
 
-	private ScoringDelivery scoreSystem;
-
 	// Use this for initialization
 	void Start () {
-		scoreSystem = GameObject.FindGameObjectWithTag ("scoring").GetComponent<ScoringDelivery>();
 		spawnPoint = gameObject.transform.position;
 		speed = .1f;
 		curLerpTime = 0;
@@ -28,19 +25,10 @@ public class Animal : MonoBehaviour {
 		curLerpTime += Time.deltaTime * speed;
 		if (curLerpTime > lerpTime) {
 			curLerpTime = lerpTime;
-
 			Destroy (gameObject);
 		}
-
+		
 		float perc = curLerpTime / lerpTime;
 		transform.position = Vector3.Lerp (spawnPoint, bottomPoint, perc);
-		transform.localScale += new Vector3(0.0008F, 0.0008f, 0);
-	}
-
-	void OnTriggerEnter(Collider col){
-		if (col.gameObject.tag == "Player") {
-			//print ("hit!");
-			scoreSystem.UpdatePizzas();
-		}
 	}
 }

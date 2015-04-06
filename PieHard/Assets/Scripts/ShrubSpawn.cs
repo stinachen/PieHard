@@ -1,19 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AnimalSpawn : MonoBehaviour {
+public class ShrubSpawn : MonoBehaviour {
+
+	public GameObject shrub;
+	public GameObject bottom;
 
 	private float usage;
 	private bool set;
 	private float delay; 
 
-	public GameObject animal;
-	public GameObject bottom;
-
 	// Use this for initialization
 	void Start () {
 		set = false;
-		delay = Random.Range (7, 9);
+		delay = Random.Range (2, 7);
 	}
 	
 	// Update is called once per frame
@@ -22,10 +22,10 @@ public class AnimalSpawn : MonoBehaviour {
 			usage = Time.time + delay;
 			set = true;
 			//instantiate animal
-			Instantiate(animal);
-			animal.transform.position = transform.position;
-			animal.GetComponent<Animal>().bottomArea = bottom;
-			animal.transform.position = transform.position;
+			Instantiate(shrub);
+			shrub.transform.position = transform.position;
+			shrub.GetComponent<Shrub>().bottomArea = bottom;
+			shrub.transform.position = transform.position;
 		}
 		if (Time.time > usage) {
 			set = false;
