@@ -15,19 +15,24 @@ public class Animal : MonoBehaviour {
 	private ScoringDelivery scoreSystem;
 
 	public Sprite animal;
+	public Sprite pizza;
 
 	// Use this for initialization
 	void Start () {
 		gameObject.GetComponent<SpriteRenderer> ().sprite = animal;
 		scoreSystem = GameObject.FindGameObjectWithTag ("scoring").GetComponent<ScoringDelivery>();
 		spawnPoint = gameObject.transform.position;
-		speed = .1f;
+		speed = Random.Range (.1f,.4f);
 		curLerpTime = 0;
 		bottomPoint = bottomArea.transform.position;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if (bottomArea == null) {
+			print ("null bottompos");
+			Destroy (gameObject);
+		}
 		curLerpTime += Time.deltaTime * speed;
 		if (curLerpTime > lerpTime) {
 			curLerpTime = lerpTime;

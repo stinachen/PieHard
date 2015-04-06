@@ -4,6 +4,7 @@ using System.Collections;
 public class BikeCollider : MonoBehaviour {
 
 	private bool rend;
+	public GameObject pizza;
 
 	// Use this for initialization
 	void Start () {
@@ -12,19 +13,14 @@ public class BikeCollider : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
 	}
 
-	void OnCollisionStay(Collision col){
+	void OnTriggerEnter(Collider col){
 		if (col.gameObject.tag == "animal") {
-			gameObject.GetComponent<SpriteRenderer>().enabled = rend;
-			rend = !rend;
-		}
-	}
-
-	void OnCollisionExit(Collision col){
-		if (col.gameObject.tag == "animal") {
-			rend = true;
+			print ("lose pizza");
+			//throw pizza
+			Instantiate(pizza);
+			pizza.transform.position = transform.position;
 		}
 	}
 
