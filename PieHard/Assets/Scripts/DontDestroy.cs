@@ -12,7 +12,8 @@ public class DontDestroy : MonoBehaviour {
 	// EASY: 0
 	// MEDIUM: 1
 	// HARD: 2
-	public int difficulty = 0;
+	public int cognitiveMode = 0;
+	public int physicalMode = 0;
 
 	private static DontDestroy instance;
 
