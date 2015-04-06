@@ -12,8 +12,9 @@ public class ShrubSpawn : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		set = false;
+		set = true;
 		delay = Random.Range (2, 7);
+		usage = Time.time + delay;
 	}
 	
 	// Update is called once per frame
