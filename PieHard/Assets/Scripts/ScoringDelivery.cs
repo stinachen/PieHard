@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ScoringDelivery : MonoBehaviour {
 
-	public int pizzas;
+	private int pizzas;
 	public GUIText txt;
 	private float duration;
 
@@ -12,14 +12,18 @@ public class ScoringDelivery : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		keepGO.GetComponent<DontDestroy> ();
+		keepGO = GameObject.FindGameObjectWithTag ("dontdestroy");
+		keep = keepGO.GetComponent<DontDestroy> ();
 		//pizzas = 6;
+		pizzas = keep.pizzas;
 		duration = Time.time + 50f;
 	//	print ("frames per second " + 1.0f / Time.deltaTime);
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		pizzas = keep.pizzas;
+		//print ("keep pizzas " + keep.pizzas);
 		txt.text = "Pizzas: " + keep.pizzas;
 		if (Time.time > duration) {
 			//print ("pizza delivered!");
@@ -28,12 +32,13 @@ public class ScoringDelivery : MonoBehaviour {
 			Application.LoadLevel(4);
 		}
 		if (keep.pizzas <= 0) {
-			print ("you failed");
+			Application.LoadLevel (5);
 		}
 	}
 
 	public void UpdatePizzas(){
 		//print ("lost a pizza");
-		pizzas--;
+		keep.pizzas--;
+		keep.lostPizzas++;
 	}
 }

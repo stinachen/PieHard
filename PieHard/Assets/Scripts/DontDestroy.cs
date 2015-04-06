@@ -4,20 +4,25 @@ using System.Collections;
 public class DontDestroy : MonoBehaviour {
 
 	public int deliveredPizzas;
-	public int pizzas;
+	public int lostPizzas = 0;
+	public int pizzas = 6;
+
+	private static DontDestroy instance;
+
+	public static DontDestroy Instance{
+		get{return instance;}
+	}
 
 	void Awake() {
-		DontDestroyOnLoad(transform.gameObject);
+		deliveredPizzas = 0;
+		DontDestroyOnLoad(this);
+
+		if (instance == null)
+			instance = this;
+		else if (instance != this) {
+			Destroy(gameObject);
+			return;
+		}
 	}
 
-	// Use this for initialization
-	void Start () {
-		pizzas = 6;
-		deliveredPizzas = 0;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }

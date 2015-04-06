@@ -14,8 +14,11 @@ public class Animal : MonoBehaviour {
 
 	private ScoringDelivery scoreSystem;
 
+	public Sprite animal;
+
 	// Use this for initialization
 	void Start () {
+		gameObject.GetComponent<SpriteRenderer> ().sprite = animal;
 		scoreSystem = GameObject.FindGameObjectWithTag ("scoring").GetComponent<ScoringDelivery>();
 		spawnPoint = gameObject.transform.position;
 		speed = .1f;
