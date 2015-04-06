@@ -61,6 +61,8 @@
      <Compile Include="Assets\Scripts\AnimalSpawn.cs" />
      <Compile Include="Assets\Scripts\BikeCollider.cs" />
      <Compile Include="Assets\Scripts\BikeControl.cs" />
+     <Compile Include="Assets\Scripts\DontDestroy.cs" />
+     <Compile Include="Assets\Scripts\House.cs" />
      <Compile Include="Assets\Scripts\MenuActions.cs" />
      <Compile Include="Assets\Scripts\Scoring.cs" />
      <Compile Include="Assets\Scripts\ScoringDelivery.cs" />
