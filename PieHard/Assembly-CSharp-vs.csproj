@@ -62,7 +62,10 @@
      <Compile Include="Assets\Scripts\BikeCollider.cs" />
      <Compile Include="Assets\Scripts\BikeControl.cs" />
      <Compile Include="Assets\Scripts\DontDestroy.cs" />
+<<<<<<< HEAD
      <Compile Include="Assets\Scripts\FlyingPizza.cs" />
+=======
+>>>>>>> 369b3cc4405d194f33519a544eba67e1ecf73202
      <Compile Include="Assets\Scripts\GameOverScreen.cs" />
      <Compile Include="Assets\Scripts\House.cs" />
      <Compile Include="Assets\Scripts\InstructionNavigation.cs" />
