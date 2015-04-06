@@ -58,6 +58,7 @@
 'Assets/Scripts/BikeCollider.cs'
 'Assets/Scripts/BikeControl.cs'
 'Assets/Scripts/GameOverScreen.cs'
+'Assets/Scripts/InstructionNavigation.cs'
 'Assets/Scripts/MenuActions.cs'
 'Assets/Scripts/Scoring.cs'
 'Assets/Scripts/ScoringDelivery.cs'
