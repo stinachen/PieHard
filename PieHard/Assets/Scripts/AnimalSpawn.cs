@@ -65,8 +65,9 @@ public class AnimalSpawn : MonoBehaviour {
 	}
 
 	public Sprite pickAnimal(){
-		int pick = Random.Range (0, 1);
-		switch (pick) {
+		int pick = Random.Range (0, 6);
+		int that = (pick > 3) ? 0 : 1;
+		switch (that) {
 			case 0:
 				return fox;
 				break;

@@ -12,6 +12,8 @@ public class Shrub : MonoBehaviour {
 	private float lerpTime = 1f;
 	private float curLerpTime;
 
+	public Sprite pic;
+
 	// Use this for initialization
 	void Start () {
 		spawnPoint = gameObject.transform.position;
@@ -22,6 +24,11 @@ public class Shrub : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (bottomArea == null) {
+			print ("bottom area on shrub not set");
+			Destroy(gameObject);
+		}
+		gameObject.GetComponent<SpriteRenderer> ().sprite = pic;
 		curLerpTime += Time.deltaTime * speed;
 		if (curLerpTime > lerpTime) {
 			curLerpTime = lerpTime;
