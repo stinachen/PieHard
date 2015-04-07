@@ -13,6 +13,9 @@ public class Scoring : MonoBehaviour {
 	public List<bool> wantedToppings;
 
 	public GameObject[] toppingObjs;
+	public GameObject dontDestroy;
+
+	private DontDestroy information;
 
 	// Use this for initialization
 	void Start () {
@@ -21,6 +24,8 @@ public class Scoring : MonoBehaviour {
 		}
 		score.text = "Score: " + score;
 		pizzas.text = "Pizzas Left: " + pizzasLeft;
+
+		information = dontDestroy.GetComponent<DontDestroy>();
 	}
 	
 	// Update is called once per frame
@@ -44,10 +49,12 @@ public class Scoring : MonoBehaviour {
 				break;
 			}
 		}
-		if (perfect) {
+		if (perfect){
 			//print ("perfect pizza");
 			pizzasLeft--;
 			curScore += 300;
 		}
+		information.totalScore = curScore;
+
 	}
 }

@@ -69,6 +69,7 @@
      <Compile Include="Assets\Scripts\House.cs" />
      <Compile Include="Assets\Scripts\InstructionNavigation.cs" />
      <Compile Include="Assets\Scripts\MenuActions.cs" />
+     <Compile Include="Assets\Scripts\Scoreboard.cs" />
      <Compile Include="Assets\Scripts\Scoring.cs" />
      <Compile Include="Assets\Scripts\ScoringDelivery.cs" />
      <Compile Include="Assets\Scripts\Shrub.cs" />
