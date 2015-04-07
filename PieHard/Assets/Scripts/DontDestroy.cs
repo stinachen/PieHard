@@ -7,6 +7,7 @@ public class DontDestroy : MonoBehaviour {
 	public int deliveredPizzas;
 	public int lostPizzas = 0;
 	public int pizzas = 6;
+	public int totalScore = 0;
 
 	/* D I F F I C U L T Y  L E V E L S */
 	// EASY: 0
