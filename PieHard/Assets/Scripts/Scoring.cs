@@ -46,6 +46,7 @@ public class Scoring : MonoBehaviour {
 				perfect = false;
 				curScore-= 100;
 				print ("bad pizza");
+				gameObject.GetComponents<AudioSource>()[1].Play();
 				break;
 			}
 		}
@@ -53,6 +54,7 @@ public class Scoring : MonoBehaviour {
 			//print ("perfect pizza");
 			pizzasLeft--;
 			curScore += 300;
+			gameObject.GetComponents<AudioSource>()[0].Play();
 		}
 		information.totalScore = curScore;
 

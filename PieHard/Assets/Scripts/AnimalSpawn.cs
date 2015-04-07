@@ -17,6 +17,8 @@ public class AnimalSpawn : MonoBehaviour {
 
 	public Sprite fox;
 	public Sprite racoon;
+	public Sprite bunny;
+	public Sprite squirrel;
 
 	// Use this for initialization
 	void Start () {
@@ -65,8 +67,15 @@ public class AnimalSpawn : MonoBehaviour {
 	}
 
 	public Sprite pickAnimal(){
-		int pick = Random.Range (0, 6);
-		int that = (pick > 3) ? 0 : 1;
+		int rand = Random.Range (0, 16);
+		int that = 0;
+		if (rand > 0 && rand < 4) {
+			that = 0;
+		} else if (rand >= 4 && rand < 8) {
+			that = 1;
+		} else if(rand >= 8 && rand < 12){
+			that = 2;
+		}
 		switch (that) {
 			case 0:
 				return fox;
@@ -74,6 +83,11 @@ public class AnimalSpawn : MonoBehaviour {
 			case 1:
 				return racoon;
 				break;
+			case 2: 
+				return bunny;
+				break;
+			default: 
+				return squirrel;
 		}
 		return fox;
 	}
