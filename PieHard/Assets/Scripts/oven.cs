@@ -49,6 +49,7 @@ public class oven : MonoBehaviour {
 		//print ("cooking");
 		sprite_oven.SetBool ("closed", true);
 		if (!set) {
+			audio.Play();
 			usage = Time.time + delay;
 			set = true;
 			//put a blank pizza, reset toppings
@@ -59,6 +60,7 @@ public class oven : MonoBehaviour {
 
 		}
 		if (Time.time > usage) {
+			audio.Pause();
 			set = false;
 			next_state = ovenState.done;
 		}

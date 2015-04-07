@@ -264,6 +264,7 @@ public class cursor : MonoBehaviour {
 				next_state = State.empty;
 				trashSet = false;
 				pizza.transform.position = pizzaSpawn;
+				trash.GetComponent<AudioSource>().audio.Play();
 			}
 		}
 	}
