@@ -2,17 +2,31 @@
 
 GitHub Repo: https://github.com/stinachen/PieHard
 
-Overview:
-Pie Hard is a pizza delivery game to help ICU patients counter muscle weakness and dementia.
+<b>Overview:</b>
+<br>
+Pie Hard is a pizza delivery game created by University of Michigan Students to help ICU patients counter muscle weakness and dementia by encouraging arm and upper body movement as well as memory games.
 
-Hardware Requirements:
-PC Laptop or Computer
-Windows Kinect
+<b>Team Members:</b>
+<ol>
+  <li>Robert Baker (bakerrd)</li>
+  <li>Christina Chen (czchen)</li>
+  <li>Anna Do (annado)</li>
+  <li>Rob Soltesz (rsoltesz)</li>
+</ol>
 
-Setup:
-1. Connect Kinect to laptop and power source.
-2. Extract files and executable from PieHardExecutable.zip
-3. Click 'PieHard' executable.
-4. Click 'Play!'
-5. Use mouse to begin the game or navigate through instructions.
-6. Once in pizza shop, you can use your hands.
+<b>Hardware Requirements:</b>
+<ul>
+  <li>PC Laptop or Computer</li>
+  <li>Windows Kinect</li>
+  <li>Display Monitor (optional)</li>
+</ul>
+
+<b>Setup:</b>
+<ol>
+  <li>Connect Kinect to laptop and power source, ensuring that the Kinect is at least 6 feet away from the user's body.</li>
+  <li>Extract files and executable from PieHardExecutable.zip</li>
+  <li>Click 'PieHard' executable.</li>
+  <li>Click 'Play!'</li>
+  <li>Use mouse to begin the game or navigate through instructions.</li>
+  <li>Once in pizza shop, you can use your hands.</li>
+</ol>
