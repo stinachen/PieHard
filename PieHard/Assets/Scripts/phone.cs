@@ -55,6 +55,8 @@ public class phone : MonoBehaviour {
 
 	private Scoring scoreSystem;
 
+	private bool start = true;
+
 	
 	// Use this for initialization
 	void Start () {
@@ -113,14 +115,13 @@ public class phone : MonoBehaviour {
 	void silent(){
 		one.renderer.enabled = false;
 		sprite_phone.SetBool ("ringing", false);
-		/*
-		if (Time.time > start_time + delay) {
+		if (start && Time.time > start_time + delay) {
 			print ("switch");
 			next_state = PhoneState.ringing;
 			audio.loop = true;
 			audio.Play ();
+			start = false;
 		}
-*/
 	}
 
 	/* P H O N E  O R D E R S */
