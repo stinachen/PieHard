@@ -1,10 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\cursor.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\DifficultySelect.cs">
     <Files>
       <File FileName="Assets\Scripts\DontDestroy.cs" Line="9" Column="23" />
-      <File FileName="Assets\Scripts\Scoring.cs" Line="34" Column="8" />
-      <File FileName="Assets\Scripts\cursor.cs" Line="200" Column="15" />
+      <File FileName="Assets\Scripts\Scoring.cs" Line="30" Column="51" />
+      <File FileName="Assets\Scripts\cursor.cs" Line="105" Column="31" />
+      <File FileName="Assets\Scripts\phone.cs" Line="106" Column="25" />
+      <File FileName="Assets\Scripts\oven.cs" Line="67" Column="64" />
+      <File FileName="Assets\Scripts\DifficultySelect.cs" Line="29" Column="38" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -5,8 +5,6 @@ public enum PhoneState{
 	ringing, silent, busy
 }
 
-
-
 /* TOPPINGS FOR ORDERS */
 /* Easy: 0-3
    Medium: 0-5
@@ -57,6 +55,8 @@ public class phone : MonoBehaviour {
 
 	private Scoring scoreSystem;
 
+	private bool start = true;
+
 	
 	// Use this for initialization
 	void Start () {
@@ -92,16 +92,13 @@ public class phone : MonoBehaviour {
 	void Update () {
 		switch (cur_state) {
 			case PhoneState.ringing:
-				//changeSprite();
 				ringing();
 				break;
-			case PhoneState.silent:
-				//changeSprite();
+		case PhoneState.silent:
 				silent();
 				break;
 			case PhoneState.busy:
 				sprite_phone.SetBool("ringing", false);
-				//changeSprite();
 				takeOrders();
 				break;
 		}
@@ -118,13 +115,15 @@ public class phone : MonoBehaviour {
 	void silent(){
 		bacon.renderer.enabled = false;
 		sprite_phone.SetBool ("ringing", false);
-		if (Time.time > start_time + delay) {
+		if (start && Time.time > start_time + delay) {
 			print ("switch");
 			next_state = PhoneState.ringing;
 			audio.loop = true;
 			audio.Play ();
+			start = false;
 		}
 	}
+
 	/* P H O N E  O R D E R S */
 	// RANDOMLY GENERATES NUMBER OF TOPPINGS ON PIZZA
 	// EACH TOPPING IS ALSO RANDOMLY GENERATED
@@ -215,6 +214,7 @@ public class phone : MonoBehaviour {
 		orderBubble.renderer.enabled = false;
 		*/
 	}
+
 	void changeSprite() {
 		if (phoneRenderer.sprite == silentPhone)
 			phoneRenderer.sprite = ringingPhone;
