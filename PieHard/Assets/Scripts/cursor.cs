@@ -102,7 +102,7 @@ public class cursor : MonoBehaviour {
 						usages[i] = Time.time + delay;
 						sets[i] = true;
 					}
-					if (Time.time > usage) { //successfully grabbed topping
+					if (Time.time > usages[i]) { //successfully grabbed topping
 						sets[i] = false;
 						cur_topping = topping;
 						cur_topping_int = i;
