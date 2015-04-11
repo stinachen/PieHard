@@ -7,13 +7,13 @@
 -r:'/Volumes/Seagate Backup Plus Drive/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll'
 -define:UNITY_4_6_2
 -define:UNITY_4_6
--define:UNITY_WEBPLAYER
--define:WEBPLUG
+-define:UNITY_STANDALONE_WIN
 -define:ENABLE_MICROPHONE
 -define:ENABLE_TEXTUREID_MAP
 -define:ENABLE_UNITYEVENTS
 -define:ENABLE_NEW_HIERARCHY 
 -define:ENABLE_AUDIO_FMOD
+-define:UNITY_STANDALONE
 -define:ENABLE_TERRAIN
 -define:ENABLE_SUBSTANCE
 -define:ENABLE_GENERICS
@@ -76,4 +76,5 @@
 'Assets/Scripts/oven.cs'
 'Assets/Scripts/phone.cs'
 'Assets/Scripts/topping.cs'
-'Assets/TextFade.cs'
+-r:'/Volumes/Seagate Backup Plus Drive/Applications/Unity/Unity.app/Contents/Frameworks/Mono/lib/mono/unity/System.Runtime.Serialization.dll'
+-r:'/Volumes/Seagate Backup Plus Drive/Applications/Unity/Unity.app/Contents/Frameworks/Mono/lib/mono/unity/System.Xml.Linq.dll'
