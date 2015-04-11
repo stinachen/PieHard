@@ -3,8 +3,12 @@ using System.Collections;
 
 public class DifficultySelect: MonoBehaviour {
 
+	public GameObject handTitle;
 	public GameObject cognitiveTitle;
 	public GameObject physicalTitle;
+
+	public GameObject rightButton;
+	public GameObject leftButton;
 
 	public GameObject CEasyButton;
 	public GameObject CMediumButton;
@@ -20,6 +24,20 @@ public class DifficultySelect: MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		information = dontDestroy.GetComponent<DontDestroy>();
+	}
+
+	public void selectHand(bool right) {
+		if (right)
+			information.rightHand = true;
+		else
+			information.rightHand = false;
+		rightButton.SetActive(false);
+		leftButton.SetActive(false);
+		handTitle.SetActive(false);
+		cognitiveTitle.SetActive(true);
+		CEasyButton.SetActive(true);
+		CMediumButton.SetActive(true);
+		CHardButton.SetActive(true);
 	}
 
 	public void selectCognitiveMode(int mode) {
