@@ -3,15 +3,16 @@ using System.Collections;
 
 public class DifficultySelect: MonoBehaviour {
 
-	public GameObject background;
-	public GameObject title;
-	public GameObject easyButton;
-	public GameObject mediumButton;
-	public GameObject hardButton;
-	public GameObject mainMenuButton;
+	public GameObject cognitiveTitle;
+	public GameObject physicalTitle;
 
-	public GameObject score;
-	public GameObject pizzasLeft;
+	public GameObject CEasyButton;
+	public GameObject CMediumButton;
+	public GameObject CHardButton;
+
+	public GameObject PEasyButton;
+	public GameObject PMediumButton;
+	public GameObject PHardButton;
 
 	public GameObject dontDestroy;
 
@@ -21,17 +22,22 @@ public class DifficultySelect: MonoBehaviour {
 		information = dontDestroy.GetComponent<DontDestroy>();
 	}
 
-	public void selectMode(int mode) {
-		background.SetActive(false);
-		title.SetActive(false);
-		easyButton.SetActive(false);
-		mediumButton.SetActive(false);
-		hardButton.SetActive(false);
-		mainMenuButton.SetActive(false);
+	public void selectCognitiveMode(int mode) {
+		information.cognitiveMode = mode;
+		CEasyButton.SetActive(false);
+		CMediumButton.SetActive(false);
+		CHardButton.SetActive(false);
+		PEasyButton.SetActive(true);
+		PMediumButton.SetActive(true);
+		PHardButton.SetActive(true);
+		cognitiveTitle.SetActive(false);
+		physicalTitle.SetActive(true);
+	}
 
-		score.SetActive(true);
-		pizzasLeft.SetActive(true);
-		information.difficulty = mode;
+	public void selectPhysicalMode(int mode) {
+		information.physicalMode = mode;
+		// load game scene
+		Application.LoadLevel(2);
 	}
 	
 	public void returnToMainMenu(){

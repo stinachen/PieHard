@@ -13,6 +13,9 @@ public class Scoring : MonoBehaviour {
 	public List<bool> wantedToppings;
 
 	public GameObject[] toppingObjs;
+	public GameObject dontDestroy;
+
+	private DontDestroy information;
 
 	// Use this for initialization
 	void Start () {
@@ -21,6 +24,8 @@ public class Scoring : MonoBehaviour {
 		}
 		score.text = "Score: " + score;
 		pizzas.text = "Pizzas Left: " + pizzasLeft;
+
+		information = dontDestroy.GetComponent<DontDestroy>();
 	}
 	
 	// Update is called once per frame
@@ -41,13 +46,17 @@ public class Scoring : MonoBehaviour {
 				perfect = false;
 				curScore-= 100;
 				print ("bad pizza");
+				gameObject.GetComponents<AudioSource>()[1].Play();
 				break;
 			}
 		}
-		if (perfect) {
+		if (perfect){
 			//print ("perfect pizza");
 			pizzasLeft--;
 			curScore += 300;
+			gameObject.GetComponents<AudioSource>()[0].Play();
 		}
+		information.totalScore = curScore;
+
 	}
 }

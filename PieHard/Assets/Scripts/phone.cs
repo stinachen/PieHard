@@ -56,6 +56,7 @@ public class phone : MonoBehaviour {
 	private int numToppings;
 
 	private Scoring scoreSystem;
+
 	
 	// Use this for initialization
 	void Start () {
@@ -120,6 +121,8 @@ public class phone : MonoBehaviour {
 		if (Time.time > start_time + delay) {
 			print ("switch");
 			next_state = PhoneState.ringing;
+			audio.loop = true;
+			audio.Play ();
 		}
 	}
 	/* P H O N E  O R D E R S */
@@ -127,6 +130,7 @@ public class phone : MonoBehaviour {
 	// EACH TOPPING IS ALSO RANDOMLY GENERATED
 	void takeOrders() {
 		if (!timerSet) {
+			audio.Pause();
 			timerSet = true;
 			timerUsage = Time.time + timerDelay;
 			orderBubble.renderer.enabled = true;

@@ -29,10 +29,16 @@ public class ScoringDelivery : MonoBehaviour {
 			//print ("pizza delivered!");
 			keep.pizzas--;
 			keep.deliveredPizzas++;
+			keep.totalScore+= 300;
 			Application.LoadLevel(4);
 		}
 		if (keep.pizzas <= 0) {
-			Application.LoadLevel (5);
+			if(keep.deliveredPizzas < keep.lostPizzas){
+				Application.LoadLevel (5);
+			}
+			else{
+				Application.LoadLevel(7);
+			}
 		}
 	}
 
@@ -40,5 +46,6 @@ public class ScoringDelivery : MonoBehaviour {
 		//print ("lost a pizza");
 		keep.pizzas--;
 		keep.lostPizzas++;
+		keep.totalScore -= 100;
 	}
 }

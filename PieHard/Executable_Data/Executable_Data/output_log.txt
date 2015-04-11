@@ -1,0 +1,52 @@
+Initialize engine version: 4.6.3f1 (4753d8b6ef2b)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 10.1]
+    Renderer: Intel(R) HD Graphics Family (ID=0x126)
+    Vendor:   Intel
+    VRAM:     128 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\annado\Desktop\PieHard\PieHard\Executable_Data\Executable_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\annado\Desktop\PieHard\PieHard\Executable_Data\Executable_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\annado\Desktop\PieHard\PieHard\Executable_Data\Executable_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\annado\Desktop\PieHard\PieHard\Executable_Data\Executable_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\annado\Desktop\PieHard\PieHard\Executable_Data\Executable_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\annado\Desktop\PieHard\PieHard\Executable_Data\Executable_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.061 seconds
+desktop: 1280x768 60Hz; virtual: 1280x768 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+Platform assembly: C:\Users\annado\Desktop\PieHard\PieHard\Executable_Data\Executable_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\annado\Desktop\PieHard\PieHard\Executable_Data\Executable_Data\Managed\System.dll (this message is harmless)
+UnloadTime: 4.397504 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 242.
+Total: 0.617569 ms (FindLiveObjects: 0.009816 ms CreateObjectMapping: 0.008478 ms MarkObjects: 0.158408 ms  DeleteObjects: 0.031235 ms)
+
+UnloadTime: 0.774192 ms
+There should be only one active instance of the KinectSensor component at at time.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 324.
+Total: 0.661745 ms (FindLiveObjects: 0.019633 ms CreateObjectMapping: 0.012047 ms MarkObjects: 0.212847 ms  DeleteObjects: 0.005354 ms)
+
+UnloadTime: 0.547066 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 250.
+Total: 0.598381 ms (FindLiveObjects: 0.011601 ms CreateObjectMapping: 0.010263 ms MarkObjects: 0.163762 ms  DeleteObjects: 0.030789 ms)
+
+UnloadTime: 0.472547 ms
+There should be only one active instance of the KinectSensor component at at time.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 332.
+Total: 0.655051 ms (FindLiveObjects: 0.019633 ms CreateObjectMapping: 0.010709 ms MarkObjects: 0.203922 ms  DeleteObjects: 0.005800 ms)
+
