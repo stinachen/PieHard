@@ -63,6 +63,9 @@ public class oven : MonoBehaviour {
 			audio.Pause();
 			set = false;
 			next_state = ovenState.done;
+			GameObject.FindGameObjectWithTag("phone").GetComponent<phone>().next_state = PhoneState.ringing;
+			GameObject.FindGameObjectWithTag("phone").audio.loop = true;
+			GameObject.FindGameObjectWithTag("phone").audio.Play();
 		}
 	}
 
