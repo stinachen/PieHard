@@ -1,9 +1,20 @@
 ﻿<Properties>
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\cursor.cs">
     <Files>
       <File FileName="Assets\Scripts\ScoringDelivery.cs" Line="18" Column="24" />
       <File FileName="Assets\Scripts\cursor.cs" Line="105" Column="31" />
+=======
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Scoring.cs">
+    <Files>
+      <File FileName="Assets\Scripts\DontDestroy.cs" Line="9" Column="23" />
+      <File FileName="Assets\Scripts\Scoring.cs" Line="33" Column="42" />
+      <File FileName="Assets\Scripts\cursor.cs" Line="105" Column="31" />
+      <File FileName="Assets\Scripts\phone.cs" Line="106" Column="25" />
+      <File FileName="Assets\Scripts\oven.cs" Line="67" Column="64" />
+>>>>>>> 2d4bfaff288559cc16ac2463bf0cb729548d0785
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
