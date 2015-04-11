@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class Scoring : MonoBehaviour {
 
-	public int pizzasLeft = 5;
+	public int pizzasLeft;
 	public int curScore = 0;
 
 	public GUIText score;
@@ -13,7 +13,6 @@ public class Scoring : MonoBehaviour {
 	public List<bool> wantedToppings;
 
 	public GameObject[] toppingObjs;
-	public GameObject dontDestroy;
 
 	private DontDestroy information;
 
@@ -25,7 +24,17 @@ public class Scoring : MonoBehaviour {
 		score.text = "Score: " + score;
 		pizzas.text = "Pizzas Left: " + pizzasLeft;
 
-		information = dontDestroy.GetComponent<DontDestroy>();
+		information = GameObject.FindGameObjectWithTag("dontdestroy").GetComponent<DontDestroy>();
+		pizzasLeft = information.pizzas;
+		print (information.rightHand);
+		if (information.rightHand) {
+			GameObject.FindGameObjectWithTag("rightHand").SetActive(true);
+			GameObject.FindGameObjectWithTag("leftHand").SetActive(false);
+		}
+		else{
+			GameObject.FindGameObjectWithTag("rightHand").SetActive(false);
+			GameObject.FindGameObjectWithTag("leftHand").SetActive(true);
+		}
 	}
 	
 	// Update is called once per frame
@@ -33,7 +42,7 @@ public class Scoring : MonoBehaviour {
 		score.text = "Score: " + curScore;
 		pizzas.text = "Pizzas Left: " + pizzasLeft;
 		if (pizzasLeft == 0) {
-			Application.LoadLevel(3);
+			Application.LoadLevel(4);
 		}
 	}
 

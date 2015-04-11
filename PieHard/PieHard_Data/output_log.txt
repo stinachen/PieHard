@@ -1,0 +1,312 @@
+Initialize engine version: 4.6.3f1 (4753d8b6ef2b)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 10.1]
+    Renderer: Intel(R) HD Graphics Family (ID=0x126)
+    Vendor:   Intel
+    VRAM:     128 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\annado\Desktop\PieHard\PieHard\PieHard_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\annado\Desktop\PieHard\PieHard\PieHard_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\annado\Desktop\PieHard\PieHard\PieHard_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\annado\Desktop\PieHard\PieHard\PieHard_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\annado\Desktop\PieHard\PieHard\PieHard_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\annado\Desktop\PieHard\PieHard\PieHard_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.053 seconds
+desktop: 1280x800 60Hz; virtual: 1280x800 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+Platform assembly: C:\Users\annado\Desktop\PieHard\PieHard\PieHard_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\annado\Desktop\PieHard\PieHard\PieHard_Data\Managed\System.dll (this message is harmless)
+UnloadTime: 14.939911 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 231.
+Total: 1.884835 ms (FindLiveObjects: 0.051315 ms CreateObjectMapping: 0.026773 ms MarkObjects: 0.418108 ms  DeleteObjects: 0.069610 ms)
+
+UnloadTime: 1.150802 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 202.
+Total: 1.780866 ms (FindLiveObjects: 0.027219 ms CreateObjectMapping: 0.030343 ms MarkObjects: 0.443543 ms  DeleteObjects: 0.010709 ms)
+
+UnloadTime: 0.526986 ms
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 237.
+Total: 0.785794 ms (FindLiveObjects: 0.013386 ms CreateObjectMapping: 0.013386 ms MarkObjects: 0.228464 ms  DeleteObjects: 0.038821 ms)
+
+UnloadTime: 0.588564 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 202.
+Total: 0.788918 ms (FindLiveObjects: 0.011155 ms CreateObjectMapping: 0.011155 ms MarkObjects: 0.185627 ms  DeleteObjects: 0.053546 ms)
+
+UnloadTime: 0.413646 ms
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 240.
+Total: 0.619354 ms (FindLiveObjects: 0.009816 ms CreateObjectMapping: 0.008478 ms MarkObjects: 0.179826 ms  DeleteObjects: 0.028111 ms)
+
+UnloadTime: 0.443097 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 535.
+Total: 0.675131 ms (FindLiveObjects: 0.027219 ms CreateObjectMapping: 0.010709 ms MarkObjects: 0.184735 ms  DeleteObjects: 0.015171 ms)
+
+switch
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+switch
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+topping length 4
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+wanted toppingsTrue onPizza True
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+wanted toppingsFalse onPizza False
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+wanted toppingsTrue onPizza True
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+wanted toppingsTrue onPizza False
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+bad pizza
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+topping length 4
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+wanted toppingsFalse onPizza False
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+wanted toppingsFalse onPizza False
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+wanted toppingsFalse onPizza False
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+wanted toppingsFalse onPizza False
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+topping length 4
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+wanted toppingsFalse onPizza False
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+wanted toppingsFalse onPizza False
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+wanted toppingsFalse onPizza False
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+wanted toppingsFalse onPizza False
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+topping length 4
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+wanted toppingsFalse onPizza False
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+wanted toppingsFalse onPizza False
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+wanted toppingsFalse onPizza False
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+wanted toppingsFalse onPizza False
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+topping length 4
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+wanted toppingsFalse onPizza False
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+wanted toppingsFalse onPizza False
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+wanted toppingsFalse onPizza False
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+wanted toppingsFalse onPizza False
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+topping length 4
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+wanted toppingsFalse onPizza False
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+wanted toppingsFalse onPizza False
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+wanted toppingsFalse onPizza False
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+wanted toppingsFalse onPizza False
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+UnloadTime: 0.636756 ms
+There should be only one active instance of the KinectSensor component at at time.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 42 unused Assets to reduce memory usage. Loaded Objects now: 444.
+Total: 1.599254 ms (FindLiveObjects: 0.023649 ms CreateObjectMapping: 0.011601 ms MarkObjects: 0.178488 ms  DeleteObjects: 0.971422 ms)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Shrub.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+bottom area on shrub not set
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Animal.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+null bottompos
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+lose pizza
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+UnloadTime: 1.622011 ms
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 47 unused Assets to reduce memory usage. Loaded Objects now: 196.
+Total: 2.110177 ms (FindLiveObjects: 0.012047 ms CreateObjectMapping: 0.009370 ms MarkObjects: 0.814352 ms  DeleteObjects: 0.113786 ms)
+
+UnloadTime: 0.292274 ms
+There should be only one active instance of the KinectSensor component at at time.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 449.
+Total: 2.565322 ms (FindLiveObjects: 0.053100 ms CreateObjectMapping: 0.020972 ms MarkObjects: 0.278887 ms  DeleteObjects: 0.050422 ms)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Shrub.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+bottom area on shrub not set
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Animal.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+null bottompos
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+UnloadTime: 0.676024 ms
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 47 unused Assets to reduce memory usage. Loaded Objects now: 204.
+Total: 0.677809 ms (FindLiveObjects: 0.013386 ms CreateObjectMapping: 0.009816 ms MarkObjects: 0.163316 ms  DeleteObjects: 0.103523 ms)
+
+UnloadTime: 0.257915 ms
+There should be only one active instance of the KinectSensor component at at time.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 457.
+Total: 0.683609 ms (FindLiveObjects: 0.022757 ms CreateObjectMapping: 0.011155 ms MarkObjects: 0.187858 ms  DeleteObjects: 0.037036 ms)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Shrub.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+bottom area on shrub not set
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Animal.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+null bottompos
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+lose pizza
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+lose pizza
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+lose pizza
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+UnloadTime: 0.505121 ms
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 43 unused Assets to reduce memory usage. Loaded Objects now: 237.
+Total: 0.677362 ms (FindLiveObjects: 0.011155 ms CreateObjectMapping: 0.010263 ms MarkObjects: 0.174472 ms  DeleteObjects: 0.098168 ms)
+
+UnloadTime: 0.444881 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 242.
+Total: 0.607306 ms (FindLiveObjects: 0.009816 ms CreateObjectMapping: 0.012047 ms MarkObjects: 0.201691 ms  DeleteObjects: 0.003123 ms)
+

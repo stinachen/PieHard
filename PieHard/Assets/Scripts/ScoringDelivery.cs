@@ -30,11 +30,11 @@ public class ScoringDelivery : MonoBehaviour {
 			keep.pizzas--;
 			keep.deliveredPizzas++;
 			keep.totalScore+= 300;
-			Application.LoadLevel(4);
+			Application.LoadLevel(5);
 		}
 		if (keep.pizzas <= 0) {
 			if(keep.deliveredPizzas < keep.lostPizzas){
-				Application.LoadLevel (5);
+				Application.LoadLevel (6);
 			}
 			else{
 				Application.LoadLevel(7);
