@@ -9,7 +9,7 @@ public enum PhoneState{
 
 /* TOPPINGS FOR ORDERS */
 /* Easy: 0-3
-   Medium: 0-7
+   Medium: 0-5
    Hard: 0-11
  */
 public enum Toppings {
@@ -28,8 +28,8 @@ public class phone : MonoBehaviour {
 
 	public GameObject orderBubble;
 	/* E A S Y  T O P P I N G S */
-	public GameObject one;
-	public GameObject two;
+	public GameObject bacon;
+	public GameObject pepperoni;
 	public GameObject three;
 	public GameObject four;
 
@@ -76,8 +76,8 @@ public class phone : MonoBehaviour {
 		orderBubble.renderer.enabled = false;
 
 		/* T O P P I N G S */
-		one.renderer.enabled = false;
-		two.renderer.enabled = false;
+		bacon.renderer.enabled = false;
+		pepperoni.renderer.enabled = false;
 		three.renderer.enabled = false;
 		four.renderer.enabled = false;
 
@@ -112,11 +112,11 @@ public class phone : MonoBehaviour {
 	void ringing(){
 		delay = Random.Range(8, 10);	
 		sprite_phone.SetBool("ringing", true);
-		one.renderer.enabled = false;
+		bacon.renderer.enabled = false;
 	}
 	
 	void silent(){
-		one.renderer.enabled = false;
+		bacon.renderer.enabled = false;
 		sprite_phone.SetBool ("ringing", false);
 		if (Time.time > start_time + delay) {
 			print ("switch");
@@ -142,8 +142,8 @@ public class phone : MonoBehaviour {
 			numToppings = Random.Range(1, 5);
 			if(numToppings >= 1){
 				topping1 = Random.Range (0, 4);
-				two.GetComponent<SpriteRenderer>().sprite = spritePicker(topping1);
-				two.renderer.enabled = true;
+				pepperoni.GetComponent<SpriteRenderer>().sprite = spritePicker(topping1);
+				pepperoni.renderer.enabled = true;
 			}
 			if(numToppings >= 2){
 				topping2 = topping1;
@@ -159,8 +159,8 @@ public class phone : MonoBehaviour {
 				while(topping3 == topping1 || topping3 == topping2){
 					topping3 = Random.Range (0, 4);
 				}
-				one.GetComponent<SpriteRenderer>().sprite = spritePicker(topping3);
-				one.renderer.enabled = true;
+				bacon.GetComponent<SpriteRenderer>().sprite = spritePicker(topping3);
+				bacon.renderer.enabled = true;
 				plus1.renderer.enabled = true;
 			}
 			if(numToppings >= 4){
@@ -177,8 +177,8 @@ public class phone : MonoBehaviour {
 		if (Time.time > timerUsage) {
 			timerSet = false;
 			orderBubble.renderer.enabled = false;
-			one.renderer.enabled = false;
-			two.renderer.enabled = false;
+			bacon.renderer.enabled = false;
+			pepperoni.renderer.enabled = false;
 			three.renderer.enabled = false;
 			four.renderer.enabled = false;
 			plus1.renderer.enabled = false;
