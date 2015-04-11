@@ -13,7 +13,7 @@ public class House : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Time.time > duration) {
-			Application.LoadLevel (3);
+			Application.LoadLevel (4);
 		}
 	}
 }

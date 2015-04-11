@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+Base path: C:/Program Files/Unity/Editor/Data
+Pipe name: \\.\pipe\UnityShaderCompiler-1-2348
+=======
 Base path: /Volumes/Seagate Backup Plus Drive/Applications/Unity/Unity.app/Contents
 Pipe name: \\.\pipe\UnityShaderCompiler-1--1593384492
+>>>>>>> f68dfbaa9fa608126d13f67497af6e8fc9457a9a
 Cmd: getPlatforms

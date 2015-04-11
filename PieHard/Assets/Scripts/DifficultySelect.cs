@@ -55,7 +55,7 @@ public class DifficultySelect: MonoBehaviour {
 	public void selectPhysicalMode(int mode) {
 		information.physicalMode = mode;
 		// load game scene
-		Application.LoadLevel(2);
+		Application.LoadLevel(3);
 	}
 	
 	public void returnToMainMenu(){
