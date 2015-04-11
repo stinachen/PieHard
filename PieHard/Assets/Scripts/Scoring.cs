@@ -27,6 +27,7 @@ public class Scoring : MonoBehaviour {
 
 		information = dontDestroy.GetComponent<DontDestroy>();
 		pizzasLeft = information.pizzas;
+		print ("right hand or not " + information.rightHand);
 		if (information.rightHand) {
 			GameObject.FindGameObjectWithTag("rightHand").SetActive(true);
 			GameObject.FindGameObjectWithTag("leftHand").SetActive(false);
