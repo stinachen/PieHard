@@ -70,6 +70,7 @@ public class phone : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+		dontDestroy = GameObject.FindGameObjectWithTag ("dontdestroy");
 		information = dontDestroy.GetComponent<DontDestroy>();
 		scoreSystem = GameObject.FindGameObjectWithTag ("scoring").GetComponent<Scoring>();
 
@@ -84,15 +85,18 @@ public class phone : MonoBehaviour {
 		two.renderer.enabled = false;
 		three.renderer.enabled = false;
 		four.renderer.enabled = false;
-		five.renderer.enabled = false;
-		six.renderer.enabled = false;
-
+		if (information.cognitiveMode == 1) {
+			five.renderer.enabled = false;
+			six.renderer.enabled = false;
+		}
 		/* P L U S  I M A G E */
 		plus0.renderer.enabled = false;
 		plus1.renderer.enabled = false;
 		plus2.renderer.enabled = false;
-		plus3.renderer.enabled = false;
-		plus4.renderer.enabled = false;
+		if (information.cognitiveMode == 1) {
+			plus3.renderer.enabled = false;
+			plus4.renderer.enabled = false;
+		}
 
 		numToppings = 0;
 	}
@@ -237,14 +241,19 @@ public class phone : MonoBehaviour {
 			two.renderer.enabled = false;
 			three.renderer.enabled = false;
 			four.renderer.enabled = false;
-			five.renderer.enabled = false;
-			six.renderer.enabled = false;
+			if (information.cognitiveMode == 1){
+				five.renderer.enabled = false;
+				six.renderer.enabled = false;
+			}
 
 			plus0.renderer.enabled = false;
 			plus1.renderer.enabled = false;
 			plus2.renderer.enabled = false;
-			plus3.renderer.enabled = false;
-			plus4.renderer.enabled = false;
+
+			if (information.cognitiveMode == 1){
+				plus3.renderer.enabled = false;
+				plus4.renderer.enabled = false;
+			}
 
 			next_state = PhoneState.silent;
 			start_time = Time.time;
