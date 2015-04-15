@@ -31,6 +31,9 @@ public class DifficultySelect: MonoBehaviour {
 			information.rightHand = true;
 		else
 			information.rightHand = false;
+
+		print ("right " + right);
+
 		rightButton.SetActive(false);
 		leftButton.SetActive(false);
 		handTitle.SetActive(false);
@@ -55,7 +58,7 @@ public class DifficultySelect: MonoBehaviour {
 	public void selectPhysicalMode(int mode) {
 		information.physicalMode = mode;
 		// load game scene
-		Application.LoadLevel(3);
+		Application.LoadLevel(8);
 	}
 	
 	public void returnToMainMenu(){
