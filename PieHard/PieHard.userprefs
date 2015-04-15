@@ -1,31 +1,14 @@
 ﻿<Properties>
-<<<<<<< HEAD
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\cursor.cs">
-    <Files>
-      <File FileName="Assets\Scripts\ScoringDelivery.cs" Line="18" Column="24" />
-      <File FileName="Assets\Scripts\cursor.cs" Line="105" Column="31" />
-=======
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Scoring.cs">
-=======
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\Kinect\KinectWrapper\SkeletonWrapper.cs">
->>>>>>> ee623390f8796a4322bc29606da6c930337ba065
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Scoring.cs">
     <Files>
-      <File FileName="Assets\Scripts\Scoring.cs" Line="31" Column="37" />
-      <File FileName="Assets\Scripts\DontDestroy.cs" Line="9" Column="23" />
-      <File FileName="Assets\Scripts\cursor.cs" Line="93" Column="16" />
-      <File FileName="Assets\Scripts\phone.cs" Line="93" Column="1" />
-      <File FileName="Assets\Scripts\oven.cs" Line="67" Column="64" />
-<<<<<<< HEAD
->>>>>>> 2d4bfaff288559cc16ac2463bf0cb729548d0785
-=======
-      <File FileName="Assets\Scripts\DifficultySelect.cs" Line="58" Column="26" />
-      <File FileName="Assets\Script\Kinect\KinectWrapper\SkeletonWrapper.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\Kinect\KinectWrapper\KinectSensor.cs" Line="1" Column="1" />
->>>>>>> ee623390f8796a4322bc29606da6c930337ba065
+      <File FileName="Assets\Scripts\DifficultySelect.cs" Line="61" Column="36" />
+      <File FileName="Assets\Scripts\DontDestroy.cs" Line="39" Column="1" />
+      <File FileName="Assets\Scripts\Scoring.cs" Line="21" Column="3" />
+      <File FileName="Assets\Scripts\phone.cs" Line="272" Column="33" />
+      <File FileName="Assets\Script\Kinect\KinectWrapper\SkeletonWrapper.cs" Line="214" Column="57" />
+      <File FileName="Assets\Scripts\InstructionNavigation.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\oven.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
