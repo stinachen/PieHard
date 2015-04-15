@@ -13,7 +13,6 @@ public class Scoring : MonoBehaviour {
 	public List<bool> wantedToppings;
 
 	public GameObject[] toppingObjs;
-	public GameObject dontDestroy;
 
 	private DontDestroy information;
 
@@ -26,9 +25,13 @@ public class Scoring : MonoBehaviour {
 		score.text = "Score: " + score;
 		pizzas.text = "Pizzas Left: " + pizzasLeft;
 
-		information = dontDestroy.GetComponent<DontDestroy>();
+		information = GameObject.FindGameObjectWithTag("dontdestroy").GetComponent<DontDestroy>();
 		pizzasLeft = information.pizzas;
+<<<<<<< HEAD
+		print (information.rightHand);
+=======
 		print ("right hand or not " + information.rightHand);
+>>>>>>> 2d4bfaff288559cc16ac2463bf0cb729548d0785
 		if (information.rightHand) {
 			GameObject.FindGameObjectWithTag("rightHand").SetActive(true);
 			GameObject.FindGameObjectWithTag("leftHand").SetActive(false);

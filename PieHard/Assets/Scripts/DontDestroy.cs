@@ -8,7 +8,7 @@ public class DontDestroy : MonoBehaviour {
 	public int lostPizzas = 0;
 	public int pizzas = 5;
 	public int totalScore = 0;
-	public bool rightHand = true;
+	public bool rightHand;
 
 	/* D I F F I C U L T Y  L E V E L S */
 	// EASY: 0

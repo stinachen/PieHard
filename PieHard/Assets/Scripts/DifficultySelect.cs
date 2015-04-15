@@ -31,6 +31,9 @@ public class DifficultySelect: MonoBehaviour {
 			information.rightHand = true;
 		else
 			information.rightHand = false;
+
+		print ("right " + right);
+
 		rightButton.SetActive(false);
 		leftButton.SetActive(false);
 		handTitle.SetActive(false);
