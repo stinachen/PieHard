@@ -18,6 +18,7 @@ public class Scoring : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
 		for(int i = 0; i < toppingObjs.Length; i++){
 			wantedToppings.Add (false);
 		}
@@ -26,8 +27,6 @@ public class Scoring : MonoBehaviour {
 
 		information = GameObject.FindGameObjectWithTag("dontdestroy").GetComponent<DontDestroy>();
 		pizzasLeft = information.pizzas;
-		print (information.rightHand);
-		//print ("right hand or not " + information.rightHand);
 
 		if (information.rightHand) {
 			GameObject.FindGameObjectWithTag("rightHand").SetActive(true);
