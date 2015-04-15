@@ -200,8 +200,21 @@ public class SkeletonWrapper : MonoBehaviour {
 					bonePos[player,bone] = kinectToWorld.MultiplyPoint3x4(kinect.getSkeleton().SkeletonData[trackedPlayers[player]].SkeletonPositions[bone]);
 					//bonePos[player,bone] = kinectToWorld.MultiplyPoint3x4(bonePos[player, bone]);
 					rawBonePos[player, bone] = kinect.getSkeleton().SkeletonData[trackedPlayers[player]].SkeletonPositions[bone];
-					
-					
+
+					//adjust for physical modes
+					DontDestroy dontDestroy = GameObject.FindGameObjectWithTag("dontdestroy").GetComponent<DontDestroy>();
+					switch(dontDestroy.physicalMode){
+						case 0:
+							bonePos[player,bone] = bonePos[player,bone] * 1.65f;
+							break;
+						case 1:
+							bonePos[player,bone] = bonePos[player,bone] * 1.5f;
+							break;
+						case 2:
+							bonePos[player,bone] = bonePos[player,bone] * 1.4f;
+							break;
+
+					}
 					Kinect.NuiSkeletonBoneOrientation[] or = kinect.getBoneOrientations(kinect.getSkeleton().SkeletonData[trackedPlayers[player]]);
 					boneLocalOrientation[player,bone] = or[bone].hierarchicalRotation.rotationQuaternion.GetQuaternion();
 					boneAbsoluteOrientation[player,bone] = or[bone].absoluteRotation.rotationQuaternion.GetQuaternion();

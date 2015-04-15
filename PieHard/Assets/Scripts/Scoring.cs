@@ -13,21 +13,30 @@ public class Scoring : MonoBehaviour {
 	public List<bool> wantedToppings;
 
 	public GameObject[] toppingObjs;
-	public GameObject dontDestroy;
 
 	private DontDestroy information;
 
 	// Use this for initialization
 	void Start () {
+<<<<<<< HEAD
+//		toppingObjs = GameObject.FindGameObjectWithTag ("topping");
+=======
+		//dontDestroy = GameObject.FindGameObjectWithTag ("dontdestroy");
+>>>>>>> 6606584a2ffe113815a6e31d52602730898789fa
 		for(int i = 0; i < toppingObjs.Length; i++){
 			wantedToppings.Add (false);
 		}
 		score.text = "Score: " + score;
 		pizzas.text = "Pizzas Left: " + pizzasLeft;
 
-		information = dontDestroy.GetComponent<DontDestroy>();
+		information = GameObject.FindGameObjectWithTag("dontdestroy").GetComponent<DontDestroy>();
 		pizzasLeft = information.pizzas;
+<<<<<<< HEAD
+		print (information.rightHand);
 		print ("right hand or not " + information.rightHand);
+=======
+
+>>>>>>> 6606584a2ffe113815a6e31d52602730898789fa
 		if (information.rightHand) {
 			GameObject.FindGameObjectWithTag("rightHand").SetActive(true);
 			GameObject.FindGameObjectWithTag("leftHand").SetActive(false);

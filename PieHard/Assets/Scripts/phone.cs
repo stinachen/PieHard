@@ -8,12 +8,11 @@ public enum PhoneState{
 /* TOPPINGS FOR ORDERS */
 /* Easy: 0-3
    Medium: 0-5
-   Hard: 0-11
+   Hard: 0-7
  */
 public enum Toppings {
 	Pepperoni, Pepper, Bacon, Sausage, 
-	Ham, Pineapple, Olive, Chicken,
-	Jalapeno, Mushroom, Onion, Tomato
+	Ham, Pineapple, Olive, Chicken
 };
 
 public class phone : MonoBehaviour {
@@ -26,23 +25,33 @@ public class phone : MonoBehaviour {
 
 	public GameObject orderBubble;
 	/* E A S Y  T O P P I N G S */
-	public GameObject bacon;
-	public GameObject pepperoni;
+	public GameObject one;
+	public GameObject two;
 	public GameObject three;
 	public GameObject four;
+	/* M E D I U M  T O P P I N G S */
+	public GameObject five;
+	public GameObject six;
 
+	public GameObject plus0;
 	public GameObject plus1;
 	public GameObject plus2;
 	public GameObject plus3;
+	public GameObject plus4;
 
+	public GameObject dontDestroy;
+
+	/* S P R I T E S */
 	public Sprite pepperoniSprite;
 	public Sprite pepperSprite;
 	public Sprite baconSprite;
 	public Sprite sausageSprite;
-
-	/* S P R I T E S */
+	public Sprite hamSprite;
+	public Sprite pineappleSprite;
 	public Sprite silentPhone;
 	public Sprite ringingPhone;
+
+
 	private SpriteRenderer phoneRenderer;
 	
 	public Animator sprite_phone;
@@ -56,17 +65,13 @@ public class phone : MonoBehaviour {
 	private Scoring scoreSystem;
 
 	private bool start = true;
+	private DontDestroy information;
 
 	
 	// Use this for initialization
 	void Start () {
-		/* I N I T I A L  S P R I T E */
-		
-		/*phoneRenderer = GetComponent<SpriteRenderer>();
-		if (phoneRenderer.sprite = null)
-			phoneRenderer.sprite = silentPhone;
-		*/
-		
+		dontDestroy = GameObject.FindGameObjectWithTag ("dontdestroy");
+		information = dontDestroy.GetComponent<DontDestroy>();
 		scoreSystem = GameObject.FindGameObjectWithTag ("scoring").GetComponent<Scoring>();
 
 		/* P H O N E  S T A T E */  
@@ -76,14 +81,22 @@ public class phone : MonoBehaviour {
 		orderBubble.renderer.enabled = false;
 
 		/* T O P P I N G S */
-		bacon.renderer.enabled = false;
-		pepperoni.renderer.enabled = false;
+		one.renderer.enabled = false;
+		two.renderer.enabled = false;
 		three.renderer.enabled = false;
 		four.renderer.enabled = false;
-
+		if (information.cognitiveMode == 1) {
+			five.renderer.enabled = false;
+			six.renderer.enabled = false;
+		}
+		/* P L U S  I M A G E */
+		plus0.renderer.enabled = false;
 		plus1.renderer.enabled = false;
 		plus2.renderer.enabled = false;
-		plus3.renderer.enabled = false;
+		if (information.cognitiveMode == 1) {
+			plus3.renderer.enabled = false;
+			plus4.renderer.enabled = false;
+		}
 
 		numToppings = 0;
 	}
@@ -109,11 +122,11 @@ public class phone : MonoBehaviour {
 	void ringing(){
 		delay = Random.Range(8, 10);	
 		sprite_phone.SetBool("ringing", true);
-		bacon.renderer.enabled = false;
+		one.renderer.enabled = false;
 	}
 	
 	void silent(){
-		bacon.renderer.enabled = false;
+		one.renderer.enabled = false;
 		sprite_phone.SetBool ("ringing", false);
 		if (start && Time.time > start_time + delay) {
 			print ("switch");
@@ -138,81 +151,114 @@ public class phone : MonoBehaviour {
 			int topping2 = -1;
 			int topping3 = -1;
 			int topping4 = -1;
-			numToppings = Random.Range(1, 5);
+			int topping5 = -1;
+			int topping6 = -1;
+
+			/* N U M B E R  O F  T O P P I N G S */
+			if (information.cognitiveMode == 0)
+				numToppings = Random.Range(1,4);
+			else if (information.cognitiveMode == 1);
+				numToppings = Random.Range(1,6);
+
+			/* R E N D E R  I M A G E S */
 			if(numToppings >= 1){
-				topping1 = Random.Range (0, 4);
-				pepperoni.GetComponent<SpriteRenderer>().sprite = spritePicker(topping1);
-				pepperoni.renderer.enabled = true;
+				if (information.cognitiveMode == 0)
+					topping1 = Random.Range(0,4);
+				else if (information.cognitiveMode == 1)
+					topping1 = Random.Range(0,6);
+				one.GetComponent<SpriteRenderer>().sprite = spritePicker(topping1);
+				one.renderer.enabled = true;
 			}
 			if(numToppings >= 2){
 				topping2 = topping1;
 				while(topping2 == topping1){
-					topping2 = Random.Range (0, 4);
+					if (information.cognitiveMode == 0)
+						topping2 = Random.Range(0,4);
+					else if (information.cognitiveMode == 1)
+						topping2 = Random.Range(0,6);
 				}
-				three.GetComponent<SpriteRenderer>().sprite = spritePicker(topping2);
-				three.renderer.enabled = true;
-				plus2.renderer.enabled = true;
+				two.GetComponent<SpriteRenderer>().sprite = spritePicker(topping2);
+				two.renderer.enabled = true;
+				plus1.renderer.enabled = true;
 			}
 			if(numToppings >= 3){
 				topping3 = topping2;
 				while(topping3 == topping1 || topping3 == topping2){
-					topping3 = Random.Range (0, 4);
+					if (information.cognitiveMode == 0)
+						topping3 = Random.Range (0,4);
+					else if (information.cognitiveMode == 1)
+						topping3 = Random.Range(0,6);
 				}
-				bacon.GetComponent<SpriteRenderer>().sprite = spritePicker(topping3);
-				bacon.renderer.enabled = true;
-				plus1.renderer.enabled = true;
+				three.GetComponent<SpriteRenderer>().sprite = spritePicker(topping3);
+				three.renderer.enabled = true;
+				plus0.renderer.enabled = true;
 			}
 			if(numToppings >= 4){
 				topping4 = topping3;
 				while(topping4 == topping1 || topping4 == topping2 || topping4 == topping3){
-					topping4 = Random.Range (0, 4);
+					if (information.cognitiveMode == 0)
+						topping4 = Random.Range(0,4);
+					else if (information.cognitiveMode == 1)
+						topping4 = Random.Range(0,6); 
 				}
 				four.GetComponent<SpriteRenderer>().sprite = spritePicker(topping4);
 				four.renderer.enabled = true;
+				plus2.renderer.enabled = true;
+			}
+			if(numToppings >= 5){
+				topping5 = topping4;
+				while(topping5 == topping1 || topping5 == topping2 || 
+					topping5 == topping3 || topping5 == topping4){
+					if (information.cognitiveMode == 0)
+						topping5 = Random.Range(0,4);
+					else if (information.cognitiveMode == 1)
+						topping5 = Random.Range(0,6);
+				}
+				five.GetComponent<SpriteRenderer>().sprite = spritePicker(topping5);
+				five.renderer.enabled = true;
 				plus3.renderer.enabled = true;
+			}
+			if(numToppings >= 6){
+				topping6 = topping5;
+				while(topping6 == topping1 || topping6 == topping2 || 
+					topping6 == topping3 || topping6 == topping4 || 
+					topping6 == topping5){
+					if (information.cognitiveMode == 0)
+						topping6 = Random.Range(0,4);
+					else if (information.cognitiveMode == 1)
+						topping6 = Random.Range(0,6);
+				}
+				six.GetComponent<SpriteRenderer>().sprite = spritePicker(topping6);
+				six.renderer.enabled = true;
+				plus4.renderer.enabled = true;
 			}
 
 		}
 		if (Time.time > timerUsage) {
 			timerSet = false;
 			orderBubble.renderer.enabled = false;
-			bacon.renderer.enabled = false;
-			pepperoni.renderer.enabled = false;
+			one.renderer.enabled = false;
+			two.renderer.enabled = false;
 			three.renderer.enabled = false;
 			four.renderer.enabled = false;
+			if (information.cognitiveMode == 1){
+				five.renderer.enabled = false;
+				six.renderer.enabled = false;
+			}
+
+			plus0.renderer.enabled = false;
 			plus1.renderer.enabled = false;
 			plus2.renderer.enabled = false;
-			plus3.renderer.enabled = false;
+
+			if (information.cognitiveMode == 1){
+				plus3.renderer.enabled = false;
+				plus4.renderer.enabled = false;
+			}
+
 			next_state = PhoneState.silent;
 			start_time = Time.time;
 		}
 
-
-		//to implement later when we has more toppingz
-		/*int numItems = Random.Range(1,4);
-		int chosenTopping = 0;
-		GameObject toppings = new GameObject();
-		toppings.AddComponent<SpriteRenderer>();
-
-		for (int i = 0; i < numItems; i++) {
-			chosenTopping = Random.Range(0, 3);
-			if (chosenTopping == Toppings.Pepperoni)
-				pepperoni.renderer.enabled = true;
-			else if (chosenTopping == Toppings.Pepper)
-				pepper.renderer.enabled = true;
-			else if (chosenTopping == Toppings.Bacon)
-				bacon.renderer.enabled = true;
-			else if (chosenTopping = Toppings.Sausage)
-				sausage.renderer.enabled = true;
-		}
-		
-		yield return new WaitForSeconds(5);
-		pepperoni.renderer.enabled = false;
-		pepper.renderer.enabled = false;
-		bacon.renderer.enabled = false;
-		sausage.renderer.enabled = false;
-		orderBubble.renderer.enabled = false;
-		*/
 	}
 
 	void changeSprite() {
@@ -226,21 +272,28 @@ public class phone : MonoBehaviour {
 		scoreSystem.wantedToppings[num] = true;
 		switch (num) {
 			case 0:
-			scoreSystem.wantedToppings[0] = true;
+				scoreSystem.wantedToppings[0] = true;
 				return pepperoniSprite;
 				break;
 			case 1:
-			scoreSystem.wantedToppings[1] = true;
+				scoreSystem.wantedToppings[1] = true;
 				return pepperSprite;
 				break;
 			case 2:
-			scoreSystem.wantedToppings[2] = true;
+				scoreSystem.wantedToppings[2] = true;
 				return baconSprite;
 				break;
 			case 3:
-			scoreSystem.wantedToppings[3] = true;
+				scoreSystem.wantedToppings[3] = true;
 				return sausageSprite;
 				break;
+			case 4:
+				scoreSystem.wantedToppings[4] = true;
+				return hamSprite;
+				break;
+			case 5:
+				scoreSystem.wantedToppings[5] = true;
+				return pineappleSprite;
 		default:
 			break;
 		}
