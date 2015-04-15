@@ -74,6 +74,7 @@
      <Compile Include="Assets\Scripts\ScoringDelivery.cs" />
      <Compile Include="Assets\Scripts\Shrub.cs" />
      <Compile Include="Assets\Scripts\ShrubSpawn.cs" />
+     <Compile Include="Assets\Scripts\TextFade.cs" />
      <Compile Include="Assets\Scripts\cursor.cs" />
      <Compile Include="Assets\Scripts\directions.cs" />
      <Compile Include="Assets\Scripts\oven.cs" />

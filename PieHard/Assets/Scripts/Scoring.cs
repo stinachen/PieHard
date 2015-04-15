@@ -18,6 +18,7 @@ public class Scoring : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		dontDestroy = GameObject.FindGameObjectWithTag ("dontdestroy");
 		for(int i = 0; i < toppingObjs.Length; i++){
 			wantedToppings.Add (false);
 		}
@@ -52,8 +53,12 @@ public class Scoring : MonoBehaviour {
 
 	public void scoreUpdate(){
 		bool perfect = true;
+		int cheese = 0;
 		print ("topping length " + toppingObjs.Length);
 		for(int i = 0; i < toppingObjs.Length; i++){
+			if(toppingObjs[i].GetComponent<topping>().onPizza == false){
+				cheese++;
+			}
 			print ("wanted toppings" + wantedToppings[i] + " onPizza " + toppingObjs[i].GetComponent<topping>().onPizza);
 			if(toppingObjs[i].GetComponent<topping>().onPizza != wantedToppings[i]){
 				perfect = false;
@@ -62,6 +67,9 @@ public class Scoring : MonoBehaviour {
 				gameObject.GetComponents<AudioSource>()[1].Play();
 				break;
 			}
+		}
+		if (cheese == 4) {
+			perfect = false;
 		}
 		if (perfect){
 			//print ("perfect pizza");
