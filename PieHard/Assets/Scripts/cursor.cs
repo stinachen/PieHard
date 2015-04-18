@@ -32,6 +32,9 @@ public class cursor : MonoBehaviour {
 	private bool trashSet = false;
 	private float trashUsage;
 
+	private bool counterSet = false;
+	private float counterUsage;
+
 	//public GameObject topping;
 
 	public GameObject pizza;
@@ -265,6 +268,21 @@ public class cursor : MonoBehaviour {
 				trashSet = false;
 				pizza.transform.position = pizzaSpawn;
 				trash.GetComponent<AudioSource>().audio.Play();
+			}
+		}
+
+		float xDist_counter = Mathf.Abs (gameObject.transform.position.x - pizzaSpawn.x);
+		float yDist_counter = Mathf.Abs (gameObject.transform.position.y - pizzaSpawn.y);
+		if (xDist_counter < .15f && yDist_counter < .15f) {
+			//print ("throw away");
+			if(!counterSet){
+				counterUsage = Time.time + delay;
+				counterSet = true;
+			}
+			if(Time.time > counterUsage){
+				next_state = State.empty;
+				counterSet = false;
+				pizza.transform.position = pizzaSpawn;
 			}
 		}
 	}
