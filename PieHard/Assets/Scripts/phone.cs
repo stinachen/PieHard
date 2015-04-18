@@ -74,6 +74,8 @@ public class phone : MonoBehaviour {
 		information = dontDestroy.GetComponent<DontDestroy>();
 		scoreSystem = GameObject.FindGameObjectWithTag ("scoring").GetComponent<Scoring>();
 
+		print ("cog mode: " + information.cognitiveMode);
+
 		/* P H O N E  S T A T E */  
 		cur_state = PhoneState.silent;
 		next_state = PhoneState.silent;
@@ -107,7 +109,7 @@ public class phone : MonoBehaviour {
 			case PhoneState.ringing:
 				ringing();
 				break;
-		case PhoneState.silent:
+			case PhoneState.silent:
 				silent();
 				break;
 			case PhoneState.busy:
@@ -156,9 +158,9 @@ public class phone : MonoBehaviour {
 
 			/* N U M B E R  O F  T O P P I N G S */
 			if (information.cognitiveMode == 0)
-				numToppings = Random.Range(1,4);
+				numToppings = Random.Range(1,5);
 			else if (information.cognitiveMode == 1);
-				numToppings = Random.Range(1,6);
+				numToppings = Random.Range(1,7);
 
 			/* R E N D E R  I M A G E S */
 			if(numToppings >= 1){
@@ -205,27 +207,23 @@ public class phone : MonoBehaviour {
 				four.renderer.enabled = true;
 				plus2.renderer.enabled = true;
 			}
-			if(numToppings >= 5){
+			if(numToppings >= 5 && information.cognitiveMode >= 1){
 				topping5 = topping4;
 				while(topping5 == topping1 || topping5 == topping2 || 
 					topping5 == topping3 || topping5 == topping4){
-					if (information.cognitiveMode == 0)
-						topping5 = Random.Range(0,4);
-					else if (information.cognitiveMode == 1)
+					if (information.cognitiveMode == 1)
 						topping5 = Random.Range(0,6);
 				}
 				five.GetComponent<SpriteRenderer>().sprite = spritePicker(topping5);
 				five.renderer.enabled = true;
 				plus3.renderer.enabled = true;
 			}
-			if(numToppings >= 6){
+			if(numToppings >= 6 && information.cognitiveMode >= 1){
 				topping6 = topping5;
 				while(topping6 == topping1 || topping6 == topping2 || 
 					topping6 == topping3 || topping6 == topping4 || 
 					topping6 == topping5){
-					if (information.cognitiveMode == 0)
-						topping6 = Random.Range(0,4);
-					else if (information.cognitiveMode == 1)
+					if (information.cognitiveMode == 1)
 						topping6 = Random.Range(0,6);
 				}
 				six.GetComponent<SpriteRenderer>().sprite = spritePicker(topping6);
