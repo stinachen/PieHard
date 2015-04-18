@@ -33,12 +33,13 @@ public class ScoringDelivery : MonoBehaviour {
 			Application.LoadLevel(5);
 		}
 		if (keep.pizzas <= 0) {
-			if(keep.deliveredPizzas < keep.lostPizzas){
+			/*if(keep.deliveredPizzas < keep.lostPizzas){
 				Application.LoadLevel (6);
 			}
 			else{
 				Application.LoadLevel(7);
-			}
+			}*/
+			Application.LoadLevel("Scoreboard");
 		}
 	}
 
