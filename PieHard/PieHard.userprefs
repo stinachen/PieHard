@@ -1,12 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Scoring.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\phone.cs">
     <Files>
-      <File FileName="Assets\Scripts\DifficultySelect.cs" Line="61" Column="36" />
-      <File FileName="Assets\Scripts\DontDestroy.cs" Line="39" Column="1" />
-      <File FileName="Assets\Scripts\Scoring.cs" Line="21" Column="3" />
-      <File FileName="Assets\Scripts\phone.cs" Line="272" Column="33" />
-      <File FileName="Assets\Script\Kinect\KinectWrapper\SkeletonWrapper.cs" Line="214" Column="57" />
+      <File FileName="Assets\Script\Kinect\KinectWrapper\KinectSensor.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\DifficultySelect.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\DontDestroy.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Scoring.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\phone.cs" Line="223" Column="56" />
+      <File FileName="Assets\Script\Kinect\KinectWrapper\SkeletonWrapper.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\InstructionNavigation.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\oven.cs" Line="1" Column="1" />
     </Files>
