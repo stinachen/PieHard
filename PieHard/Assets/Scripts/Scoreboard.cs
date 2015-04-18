@@ -4,6 +4,8 @@ using System.Collections;
 public class Scoreboard : MonoBehaviour {
 
 	public GUIText score;
+	public GUIText delivered;
+	public GUIText lost;
 	public GameObject playAgainButton;
 	public GameObject mainMenuButton;
 
@@ -28,6 +30,8 @@ public class Scoreboard : MonoBehaviour {
 	}
 
 	void Update(){
-		score.text = "Score: " + information.totalScore;
+		delivered.text = "You successfully delivered " + information.deliveredPizzas + " pizzas";
+		lost.text = "You lost " + information.lostPizzas + " pizzas";
+		score.text = "Final Score: " + information.totalScore;
 	}
 }
