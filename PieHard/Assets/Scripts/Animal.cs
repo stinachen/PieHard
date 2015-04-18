@@ -22,7 +22,7 @@ public class Animal : MonoBehaviour {
 		gameObject.GetComponent<SpriteRenderer> ().sprite = animal;
 		scoreSystem = GameObject.FindGameObjectWithTag ("scoring").GetComponent<ScoringDelivery>();
 		spawnPoint = gameObject.transform.position;
-		speed = Random.Range (.1f,.4f);
+		speed = Random.Range (.2f,.4f);
 		curLerpTime = 0;
 		bottomPoint = bottomArea.transform.position;
 	}

@@ -24,6 +24,7 @@ public class DifficultySelect: MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		information = dontDestroy.GetComponent<DontDestroy>();
+		information.totalScore = 0;
 	}
 
 	public void selectHand(bool right) {
@@ -64,6 +65,9 @@ public class DifficultySelect: MonoBehaviour {
 				break;
 			case 1:
 				Application.LoadLevel ("MediumBake");
+				break;
+			case 2:
+				Application.LoadLevel ("HardBake");
 				break;
 		}
 	}

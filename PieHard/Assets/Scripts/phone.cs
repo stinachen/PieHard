@@ -78,6 +78,7 @@ public class phone : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+		scoreSystem = GameObject.FindGameObjectWithTag ("scoring").GetComponent<Scoring>();
 		dontDestroy = GameObject.FindGameObjectWithTag ("dontdestroy");
 		information = dontDestroy.GetComponent<DontDestroy>();
 		
@@ -92,10 +93,11 @@ public class phone : MonoBehaviour {
 		two.renderer.enabled = false;
 		three.renderer.enabled = false;
 		four.renderer.enabled = false;
-		if (information.cognitiveMode == 1) {
+		if (information.cognitiveMode >= 1) {
 			five.renderer.enabled = false;
 			six.renderer.enabled = false;
-		} else if (information.cognitiveMode == 2) {
+		}
+		if (information.cognitiveMode == 2) {
 			seven.renderer.enabled = false;
 			eight.renderer.enabled = false;
 
@@ -104,11 +106,13 @@ public class phone : MonoBehaviour {
 		plus0.renderer.enabled = false;
 		plus1.renderer.enabled = false;
 		plus2.renderer.enabled = false;
-		if (information.cognitiveMode == 1) {
+		if (information.cognitiveMode >= 1) {
 			plus3.renderer.enabled = false;
 			plus4.renderer.enabled = false;
-		} else if (information.cognitiveMode == 2) {
+		}
+		if (information.cognitiveMode == 2) {
 			plus5.renderer.enabled = false;
+			plus6.renderer.enabled = false;
 		}
 
 		numToppings = 0;
@@ -158,6 +162,8 @@ public class phone : MonoBehaviour {
 			audio.Pause();
 			timerSet = true;
 			timerUsage = Time.time + timerDelay;
+			if(information.cognitiveMode == 2)
+				timerUsage += 2f;
 			orderBubble.renderer.enabled = true;
 			//pick a number of toppings
 			int topping1 = -1;
@@ -281,7 +287,7 @@ public class phone : MonoBehaviour {
 					else if (information.cognitiveMode == 2)
 						topping8 = Random.Range(0,8);
 				}
-				eight.GetComponent<SpriteRenderer>().sprite = spritePicker(topping7);
+				eight.GetComponent<SpriteRenderer>().sprite = spritePicker(topping8);
 				eight.renderer.enabled = true;
 				plus6.renderer.enabled = true;
 			}
@@ -294,7 +300,7 @@ public class phone : MonoBehaviour {
 			two.renderer.enabled = false;
 			three.renderer.enabled = false;
 			four.renderer.enabled = false;
-			if (information.cognitiveMode == 1){
+			if (information.cognitiveMode >= 1){
 				five.renderer.enabled = false;
 				six.renderer.enabled = false;
 			}
@@ -307,7 +313,7 @@ public class phone : MonoBehaviour {
 			plus1.renderer.enabled = false;
 			plus2.renderer.enabled = false;
 
-			if (information.cognitiveMode == 1){
+			if (information.cognitiveMode >= 1){
 				plus3.renderer.enabled = false;
 				plus4.renderer.enabled = false;
 			}
@@ -358,9 +364,11 @@ public class phone : MonoBehaviour {
 			case 6:
 				scoreSystem.wantedToppings[6] = true;
 				return chickenSprite;
+				break;
 			case 7:
 				scoreSystem.wantedToppings[7] = true;
 				return mushroomSprite;
+				break;
 		default:
 			break;
 		}
