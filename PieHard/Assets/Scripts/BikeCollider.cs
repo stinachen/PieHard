@@ -20,6 +20,7 @@ public class BikeCollider : MonoBehaviour {
 			print ("lose pizza");
 			//throw pizza
 			Instantiate(pizza);
+			audio.Play();
 			pizza.transform.position = transform.position;
 		}
 	}
