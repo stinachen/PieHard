@@ -32,12 +32,17 @@ public class phone : MonoBehaviour {
 	/* M E D I U M  T O P P I N G S */
 	public GameObject five;
 	public GameObject six;
+	/* H A R D  T O P P I N G S */
+	public GameObject seven;
+	public GameObject eight;
 
 	public GameObject plus0;
 	public GameObject plus1;
 	public GameObject plus2;
 	public GameObject plus3;
 	public GameObject plus4;
+	public GameObject plus5;
+	public GameObject plus6;
 
 	public GameObject dontDestroy;
 
@@ -48,6 +53,9 @@ public class phone : MonoBehaviour {
 	public Sprite sausageSprite;
 	public Sprite hamSprite;
 	public Sprite pineappleSprite;
+	public Sprite chickenSprite;
+	public Sprite mushroomSprite;
+
 	public Sprite silentPhone;
 	public Sprite ringingPhone;
 
@@ -72,10 +80,7 @@ public class phone : MonoBehaviour {
 	void Start () {
 		dontDestroy = GameObject.FindGameObjectWithTag ("dontdestroy");
 		information = dontDestroy.GetComponent<DontDestroy>();
-		scoreSystem = GameObject.FindGameObjectWithTag ("scoring").GetComponent<Scoring>();
-
-		print ("cog mode: " + information.cognitiveMode);
-
+		
 		/* P H O N E  S T A T E */  
 		cur_state = PhoneState.silent;
 		next_state = PhoneState.silent;
@@ -90,6 +95,10 @@ public class phone : MonoBehaviour {
 		if (information.cognitiveMode == 1) {
 			five.renderer.enabled = false;
 			six.renderer.enabled = false;
+		} else if (information.cognitiveMode == 2) {
+			seven.renderer.enabled = false;
+			eight.renderer.enabled = false;
+
 		}
 		/* P L U S  I M A G E */
 		plus0.renderer.enabled = false;
@@ -98,6 +107,8 @@ public class phone : MonoBehaviour {
 		if (information.cognitiveMode == 1) {
 			plus3.renderer.enabled = false;
 			plus4.renderer.enabled = false;
+		} else if (information.cognitiveMode == 2) {
+			plus5.renderer.enabled = false;
 		}
 
 		numToppings = 0;
@@ -155,12 +166,16 @@ public class phone : MonoBehaviour {
 			int topping4 = -1;
 			int topping5 = -1;
 			int topping6 = -1;
+			int topping7 = -1;
+			int topping8 = -1;
 
 			/* N U M B E R  O F  T O P P I N G S */
 			if (information.cognitiveMode == 0)
 				numToppings = Random.Range(1,5);
 			else if (information.cognitiveMode == 1);
 				numToppings = Random.Range(1,7);
+			else if (information.cognitiveMode == 2)
+				numToppings = Random.Range(1,9);
 
 			/* R E N D E R  I M A G E S */
 			if(numToppings >= 1){
@@ -168,6 +183,8 @@ public class phone : MonoBehaviour {
 					topping1 = Random.Range(0,4);
 				else if (information.cognitiveMode == 1)
 					topping1 = Random.Range(0,6);
+				else if (information.cognitiveMode == 2)
+					topping1 = Random.Range(0,8);
 				one.GetComponent<SpriteRenderer>().sprite = spritePicker(topping1);
 				one.renderer.enabled = true;
 			}
@@ -178,6 +195,8 @@ public class phone : MonoBehaviour {
 						topping2 = Random.Range(0,4);
 					else if (information.cognitiveMode == 1)
 						topping2 = Random.Range(0,6);
+					else if (information.cognitiveMode == 2)
+						topping2 = Random.Range(0,8);
 				}
 				two.GetComponent<SpriteRenderer>().sprite = spritePicker(topping2);
 				two.renderer.enabled = true;
@@ -190,6 +209,8 @@ public class phone : MonoBehaviour {
 						topping3 = Random.Range (0,4);
 					else if (information.cognitiveMode == 1)
 						topping3 = Random.Range(0,6);
+					else if (information.cognitiveMode == 2)
+						topping3 = Random.Range(0,8);
 				}
 				three.GetComponent<SpriteRenderer>().sprite = spritePicker(topping3);
 				three.renderer.enabled = true;
@@ -202,6 +223,8 @@ public class phone : MonoBehaviour {
 						topping4 = Random.Range(0,4);
 					else if (information.cognitiveMode == 1)
 						topping4 = Random.Range(0,6); 
+					else if (information.cognitiveMode == 2)
+						topping4 = Random.Range(0,8);
 				}
 				four.GetComponent<SpriteRenderer>().sprite = spritePicker(topping4);
 				four.renderer.enabled = true;
@@ -213,6 +236,8 @@ public class phone : MonoBehaviour {
 					topping5 == topping3 || topping5 == topping4){
 					if (information.cognitiveMode == 1)
 						topping5 = Random.Range(0,6);
+					else if (information.cognitiveMode == 2)
+						topping5 = Random.Range(0,8);
 				}
 				five.GetComponent<SpriteRenderer>().sprite = spritePicker(topping5);
 				five.renderer.enabled = true;
@@ -225,10 +250,40 @@ public class phone : MonoBehaviour {
 					topping6 == topping5){
 					if (information.cognitiveMode == 1)
 						topping6 = Random.Range(0,6);
+					else if (information.cognitiveMode == 2)
+						topping6 = Random.Range(0,8);
 				}
 				six.GetComponent<SpriteRenderer>().sprite = spritePicker(topping6);
 				six.renderer.enabled = true;
 				plus4.renderer.enabled = true;
+			}
+			if (numToppings >= 7 && information.cognitiveMode == 2) {
+				topping7 = topping6;
+				while (topping7 == topping1 || topping7 == topping2 || topping7 == topping3 || 
+					topping7 == topping4 || topping7 == topping5 || 
+					topping7 == topping6) {
+					if (information.cognitiveMode == 1)
+						topping7 = Random.Range(0,6);
+					else if (information.cognitiveMode == 2)
+						topping7 = Random.Range(0,8);
+				}
+				seven.GetComponent<SpriteRenderer>().sprite = spritePicker(topping7);
+				seven.renderer.enabled = true;
+				plus5.renderer.enabled = true;
+			}
+			if (numToppings >= 8 && information.cognitiveMode == 2) {
+				topping8 = topping7;
+				while (topping8 == topping1 || topping8 == topping2 || topping8 == topping3 || 
+					topping8 == topping4 || topping8 == topping5 || 
+					topping8 == topping6 || topping8 == topping7) {
+					if (information.cognitiveMode == 1)
+						topping8 = Random.Range(0,6);
+					else if (information.cognitiveMode == 2)
+						topping8 = Random.Range(0,8);
+				}
+				eight.GetComponent<SpriteRenderer>().sprite = spritePicker(topping7);
+				eight.renderer.enabled = true;
+				plus6.renderer.enabled = true;
 			}
 
 		}
@@ -243,6 +298,10 @@ public class phone : MonoBehaviour {
 				five.renderer.enabled = false;
 				six.renderer.enabled = false;
 			}
+			if (information.cognitiveMode == 2) {
+				seven.renderer.enabled = false;
+				eight.renderer.enabled = false;
+			}
 
 			plus0.renderer.enabled = false;
 			plus1.renderer.enabled = false;
@@ -251,6 +310,10 @@ public class phone : MonoBehaviour {
 			if (information.cognitiveMode == 1){
 				plus3.renderer.enabled = false;
 				plus4.renderer.enabled = false;
+			}
+			if (information.cognitiveMode == 2) {
+				plus5.renderer.enabled = false;
+				plus6.renderer.enabled = false;
 			}
 
 			next_state = PhoneState.silent;
@@ -292,6 +355,12 @@ public class phone : MonoBehaviour {
 			case 5:
 				scoreSystem.wantedToppings[5] = true;
 				return pineappleSprite;
+			case 6:
+				scoreSystem.wantedToppings[6] = true;
+				return chickenSprite;
+			case 7:
+				scoreSystem.wantedToppings[7] = true;
+				return mushroomSprite;
 		default:
 			break;
 		}
