@@ -156,9 +156,9 @@ public class phone : MonoBehaviour {
 
 			/* N U M B E R  O F  T O P P I N G S */
 			if (information.cognitiveMode == 0)
-				numToppings = Random.Range(1,5);
+				numToppings = Random.Range(1,4);
 			else if (information.cognitiveMode == 1);
-				numToppings = Random.Range(1,7);
+				numToppings = Random.Range(1,6);
 
 			/* R E N D E R  I M A G E S */
 			if(numToppings >= 1){

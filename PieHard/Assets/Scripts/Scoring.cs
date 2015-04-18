@@ -18,7 +18,7 @@ public class Scoring : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		//dontDestroy = GameObject.FindGameObjectWithTag ("dontdestroy");
+
 		for(int i = 0; i < toppingObjs.Length; i++){
 			wantedToppings.Add (false);
 		}

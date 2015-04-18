@@ -58,7 +58,14 @@ public class DifficultySelect: MonoBehaviour {
 	public void selectPhysicalMode(int mode) {
 		information.physicalMode = mode;
 		// load game scene
-		Application.LoadLevel(8);
+		switch (information.cognitiveMode) {
+			case 0:
+				Application.LoadLevel ("EasyBake");
+				break;
+			case 1:
+				Application.LoadLevel ("MediumBake");
+				break;
+		}
 	}
 	
 	public void returnToMainMenu(){
