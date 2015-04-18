@@ -172,7 +172,7 @@ public class phone : MonoBehaviour {
 			/* N U M B E R  O F  T O P P I N G S */
 			if (information.cognitiveMode == 0)
 				numToppings = Random.Range(1,5);
-			else if (information.cognitiveMode == 1);
+			else if (information.cognitiveMode == 1)
 				numToppings = Random.Range(1,7);
 			else if (information.cognitiveMode == 2)
 				numToppings = Random.Range(1,9);
