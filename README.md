@@ -29,4 +29,5 @@ Pie Hard is a pizza delivery game created by University of Michigan Students to 
   <li>Click 'Play!'</li>
   <li>Use mouse to begin the game or navigate through instructions.</li>
   <li>Once in pizza shop, you can use your hands.</li>
+  <li>In the delivery mode, you navigate with your upper body.</li>
 </ol>
