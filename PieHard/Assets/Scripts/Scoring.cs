@@ -64,7 +64,8 @@ public class Scoring : MonoBehaviour {
 				break;
 			}
 		}
-		if (cheese == 4) {
+		//check for a zero-topping pizza
+		if (cheese == (4 + 2 * information.cognitiveMode)) {
 			perfect = false;
 		}
 		if (perfect){

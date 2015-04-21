@@ -24,6 +24,7 @@ public class DifficultySelect: MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		information = dontDestroy.GetComponent<DontDestroy>();
+		//information = new DontDestroy ();
 		information.totalScore = 0;
 	}
 
@@ -74,5 +75,6 @@ public class DifficultySelect: MonoBehaviour {
 	
 	public void returnToMainMenu(){
 		Application.LoadLevel(0);
+		Destroy (dontDestroy);
 	}
 }

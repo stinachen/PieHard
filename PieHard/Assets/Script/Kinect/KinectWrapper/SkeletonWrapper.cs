@@ -205,13 +205,13 @@ public class SkeletonWrapper : MonoBehaviour {
 					DontDestroy dontDestroy = GameObject.FindGameObjectWithTag("dontdestroy").GetComponent<DontDestroy>();
 					switch(dontDestroy.physicalMode){
 						case 0:
-							bonePos[player,bone] = bonePos[player,bone] * 1.65f;
+							bonePos[player,bone] = bonePos[player,bone] * 3f;
 							break;
 						case 1:
-							bonePos[player,bone] = bonePos[player,bone] * 1.5f;
+							bonePos[player,bone] = bonePos[player,bone] * 2.5f;
 							break;
 						case 2:
-							bonePos[player,bone] = bonePos[player,bone] * 1.4f;
+							bonePos[player,bone] = bonePos[player,bone] * 2.25f;
 							break;
 
 					}
