@@ -22,11 +22,14 @@ public class Scoreboard : MonoBehaviour {
 	}
 
 	public void playAgain(){
+		information.pizzas = information.initialPizzas;
 		Application.LoadLevel(2);
 	}
 
 	public void mainMenu(){
+
 		Application.LoadLevel(0);
+		 
 	}
 
 	void Update(){

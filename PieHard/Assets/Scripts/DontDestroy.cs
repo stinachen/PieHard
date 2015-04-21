@@ -9,6 +9,7 @@ public class DontDestroy : MonoBehaviour {
 	public int pizzas = 5;
 	public int totalScore = 0;
 	public bool rightHand;
+	public int initialPizzas;
 
 	/* D I F F I C U L T Y  L E V E L S */
 	// EASY: 0
@@ -24,6 +25,7 @@ public class DontDestroy : MonoBehaviour {
 	}
 
 	void Awake() {
+		initialPizzas = pizzas;
 		deliveredPizzas = 0;
 		DontDestroyOnLoad(this);
 
