@@ -11,7 +11,7 @@ public class cursor : MonoBehaviour {
 
 	private bool set = false;
 	private float usage;
-	private float delay = 2f;
+	private float delay = 1.25f;
 
 	private bool toppingSet = false;
 	private float toppingUsage;
@@ -146,28 +146,29 @@ public class cursor : MonoBehaviour {
 		}
 		
 		//phone
-		float xDist_phone = Mathf.Abs (gameObject.transform.position.x - phone.transform.position.x);
-		float yDist_phone = Mathf.Abs (gameObject.transform.position.y - phone.transform.position.y);
-		if (xDist_phone < .15f && yDist_phone < .15f) {
-			//print ("on phone");
-			if(!phoneSet){
-			//	print ("set time for phone");
-				phoneUsage = Time.time + delay;
-				phoneSet = true;
-			}
-			if(Time.time > phoneUsage){
-			//	print ("phone answered");
+		if (phone.GetComponent<phone> ().cur_state == PhoneState.ringing) {
+			float xDist_phone = Mathf.Abs (gameObject.transform.position.x - phone.transform.position.x);
+			float yDist_phone = Mathf.Abs (gameObject.transform.position.y - phone.transform.position.y);
+			if (xDist_phone < .15f && yDist_phone < .15f) {
+				//print ("on phone");
+				if (!phoneSet) {
+					//	print ("set time for phone");
+					phoneUsage = Time.time + delay;
+					phoneSet = true;
+				}
+				if (Time.time > phoneUsage) {
+					//	print ("phone answered");
+					phoneSet = false;
+					next_state = State.empty;
+					phone talk = phone.GetComponent<phone> ();
+					talk.next_state = PhoneState.busy;
+					next_state = State.empty;
+					return;
+				}
+			} else {
+				next_state = State.empty;
 				phoneSet = false;
-				next_state = State.empty;
-				phone talk = phone.GetComponent<phone>();
-				talk.next_state = PhoneState.busy;
-				next_state = State.empty;
-				return;
 			}
-		}
-		else{
-			next_state = State.empty;
-			phoneSet = false;
 		}
 	}
 
@@ -197,8 +198,8 @@ public class cursor : MonoBehaviour {
 
 		topping topHeld = cur_topping.GetComponent<topping>();
 		float xDist_spawn = Mathf.Abs (gameObject.transform.position.x - topHeld.toppingSpawn.x);
-		float yDist_spawn = Mathf.Abs (gameObject.transform.position.x - topHeld.toppingSpawn.y);
-		if (xDist_spawn < .15f && yDist_pizza < .15f) {
+		float yDist_spawn = Mathf.Abs (gameObject.transform.position.y - topHeld.toppingSpawn.y);
+		if (xDist_spawn < .15f && yDist_spawn < .15f) {
 			//print ("put back");
 			if(!toppingResetSet){
 				toppingResetUsage = Time.time + delay;
