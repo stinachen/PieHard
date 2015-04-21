@@ -12,6 +12,7 @@ public class cursor : MonoBehaviour {
 	private bool set = false;
 	private float usage;
 	private float delay = 1.25f;
+	private float putBackDelay = 2f;
 
 	private bool toppingSet = false;
 	private float toppingUsage;
@@ -202,7 +203,7 @@ public class cursor : MonoBehaviour {
 		if (xDist_spawn < .15f && yDist_spawn < .15f) {
 			//print ("put back");
 			if(!toppingResetSet){
-				toppingResetUsage = Time.time + delay;
+				toppingResetUsage = Time.time + putBackDelay;
 				toppingResetSet = true;
 			}
 			if(Time.time > toppingResetUsage){
@@ -275,9 +276,9 @@ public class cursor : MonoBehaviour {
 		float xDist_counter = Mathf.Abs (gameObject.transform.position.x - pizzaSpawn.x);
 		float yDist_counter = Mathf.Abs (gameObject.transform.position.y - pizzaSpawn.y);
 		if (xDist_counter < .15f && yDist_counter < .15f) {
-			//print ("throw away");
+			//print ("put back");
 			if(!counterSet){
-				counterUsage = Time.time + delay;
+				counterUsage = Time.time + putBackDelay;
 				counterSet = true;
 			}
 			if(Time.time > counterUsage){
